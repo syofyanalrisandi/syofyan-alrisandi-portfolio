@@ -5,6 +5,8 @@
 *.iam
 *.idw
 *.dwg
+/*.pdf
+!pdf/*.pdf
 *.jpeg
 *.jpg
 *.png
