@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ECEK2 CAD - 100 Dokumen Gambar Teknik Profesional (LinkedIn Edition)</title>
     <meta name="description" content="ECEK2 CAD - Platform pembelajaran 100 dokumen PDF gambar teknik profesional nyata berstandar industri dengan Proyeksi 2D Ortogonal dan Tampak 3D Isometri untuk Autodesk Inventor.">
     
@@ -72,7 +72,7 @@
     <div class="linkedin-workspace">
 
         <!-- COLUMN 1 (KIRI): COURSE PLAYLIST & CATEGORY FILTER -->
-        <aside class="col-playlist">
+        <aside class="col-playlist" id="col-playlist">
             <div class="playlist-card">
                 
                 <div class="playlist-header">
@@ -101,7 +101,7 @@
         </aside>
 
         <!-- COLUMN 2 (TENGAH): MAIN DOCUMENT VIEWER STAGE -->
-        <main class="col-stage">
+        <main class="col-stage" id="col-stage">
             <div class="stage-card">
                 
                 <!-- Stage Header Bar -->
@@ -120,6 +120,10 @@
                             Tampak 3D Isometri
                         </span>
                         <span class="badge-dwg-no" id="stage-drawing-no">DWG-ENG-01</span>
+                        <button class="btn-stage-mobile-fullscreen" id="btn-stage-mobile-open" title="Buka PDF di Tab Baru">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            <span>Layar Penuh</span>
+                        </button>
                     </div>
                 </div>
 
@@ -132,7 +136,7 @@
         </main>
 
         <!-- COLUMN 3 (KANAN): TECHNICAL SPECIFICATIONS & ACTIONS -->
-        <aside class="col-specs">
+        <aside class="col-specs" id="col-specs">
             <div class="specs-card">
                 
                 <div class="specs-card-header">
@@ -194,6 +198,46 @@
         </aside>
 
     </div>
+
+    <!-- MOBILE BOTTOM NAVIGATION (LINKEDIN APP STYLE) -->
+    <nav class="mobile-bottom-nav" id="mobile-bottom-nav" aria-label="Mobile Navigation">
+        <button class="nav-tab-btn active" data-tab="playlist" id="tab-btn-playlist">
+            <div class="tab-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+                <span class="tab-badge" id="mobile-tab-count">100</span>
+            </div>
+            <span>Silabus</span>
+        </button>
+
+        <button class="nav-tab-btn" data-tab="stage" id="tab-btn-stage">
+            <div class="tab-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+            </div>
+            <span>Viewer PDF</span>
+        </button>
+
+        <button class="nav-tab-btn" data-tab="specs" id="tab-btn-specs">
+            <div class="tab-icon-wrap">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+            </div>
+            <span>Spesifikasi</span>
+        </button>
+    </nav>
 
     <!-- Scripts -->
     <script src="js/data.js"></script>

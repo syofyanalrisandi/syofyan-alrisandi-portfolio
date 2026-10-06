@@ -35,6 +35,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnOpenTab = document.getElementById('btn-open-tab');
     const btnPrintDoc = document.getElementById('btn-print-doc');
 
+    // DOM Elements - Mobile Navigation
+    const tabButtons = document.querySelectorAll('.nav-tab-btn');
+    const mobileTabCount = document.getElementById('mobile-tab-count');
+    const btnStageMobileOpen = document.getElementById('btn-stage-mobile-open');
+    let activeMobileTab = 'playlist';
+
+    function switchMobileTab(tabName) {
+        activeMobileTab = tabName;
+        tabButtons.forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-tab') === tabName);
+        });
+        document.body.setAttribute('data-active-tab', tabName);
+        // Scroll to top of active column when switched
+        if (tabName === 'playlist') {
+            pdfDocListContainer.scrollTop = 0;
+        } else if (tabName === 'specs') {
+            specsBodyContainer.scrollTop = 0;
+        }
+    }
+
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            switchMobileTab(btn.getAttribute('data-tab'));
+        });
+    });
+
+    if (btnStageMobileOpen) {
+        btnStageMobileOpen.addEventListener('click', () => {
+            window.open(selectedDoc.pdfPath, '_blank');
+        });
+    }
+
+    // Default mobile state
+    switchMobileTab('playlist');
+
     // Initialize View
     renderPlaylist();
     loadPdfDocument(selectedDoc);
@@ -104,6 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         totalDocCounter.textContent = `${filtered.length} / ${window.REAL_PDF_COLLECTION.length}`;
+        if (mobileTabCount) {
+            mobileTabCount.textContent = filtered.length;
+        }
 
         if (filtered.length === 0) {
             pdfDocListContainer.innerHTML = `
@@ -150,6 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.classList.add('active');
                 selectedDoc = doc;
                 loadPdfDocument(doc);
+
+                // Auto switch to viewer tab on mobile devices
+                if (window.innerWidth <= 820) {
+                    switchMobileTab('stage');
+                }
             });
 
             pdfDocListContainer.appendChild(item);
