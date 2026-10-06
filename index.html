@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECEK2 CAD - 100 Dokumen Gambar Teknik Profesional (LinkedIn Edition)</title>
+    <meta name="description" content="ECEK2 CAD - Platform pembelajaran 100 dokumen PDF gambar teknik profesional nyata berstandar industri dengan Proyeksi 2D Ortogonal dan Tampak 3D Isometri untuk Autodesk Inventor.">
+    
+    <!-- LinkedIn Font Styling -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- TOP NAVBAR: LINKEDIN STYLE MINIMALIST -->
+    <header class="linkedin-navbar">
+        <div class="navbar-left">
+            <!-- LinkedIn Style "EC" Logo Box -->
+            <a href="#" class="linkedin-brand" title="ECEK2 CAD - Professional CAD Learning Platform">
+                <div class="linkedin-logo-box">EC</div>
+                <div class="linkedin-brand-text">
+                    <span class="brand-name">ECEK2 CAD</span>
+                    <span class="brand-sub">Learning Hub</span>
+                </div>
+            </a>
+
+            <!-- LinkedIn Global Search Box -->
+            <div class="linkedin-search-wrapper">
+                <svg class="linkedin-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input type="text" id="navbar-search-input" placeholder="Cari dari 100 gambar teknik, nomor gambar, atau fitur..." autocomplete="off">
+            </div>
+        </div>
+
+        <!-- Navbar Right Action Buttons -->
+        <div class="navbar-right">
+            <button class="btn-nav-action btn-nav-primary" id="btn-top-download" title="Unduh File PDF yang sedang aktif">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Unduh PDF Asli</span>
+            </button>
+
+            <button class="btn-nav-action btn-nav-secondary" id="btn-top-open" title="Buka di Tab Baru Browser">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+                <span>Tab Baru</span>
+            </button>
+
+            <button class="btn-nav-action btn-nav-secondary" id="btn-top-print" title="Cetak Lembar Kerja PDF">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                    <rect x="6" y="14" width="12" height="8"></rect>
+                </svg>
+                <span>Cetak</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 3-COLUMN WORKSPACE: LINKEDIN LEARNING STYLE -->
+    <div class="linkedin-workspace">
+
+        <!-- COLUMN 1 (KIRI): COURSE PLAYLIST & CATEGORY FILTER -->
+        <aside class="col-playlist">
+            <div class="playlist-card">
+                
+                <div class="playlist-header">
+                    <div class="playlist-title-row">
+                        <h2>Materi Gambar Teknik</h2>
+                        <span class="playlist-counter-badge" id="total-doc-counter">100 / 100</span>
+                    </div>
+                    <p class="playlist-subtitle">100% Memiliki Proyeksi 2D & Tampak Isometri 3D</p>
+
+                    <!-- Quick Filter Pills -->
+                    <div class="playlist-filter-pills" id="category-pills">
+                        <button class="pill-btn active" data-category="all">Semua (100)</button>
+                        <button class="pill-btn" data-category="Machinist Fixture & Advanced Assemblies">Machinist Fixture (10)</button>
+                        <button class="pill-btn" data-category="Precision Mechanical Mounts & Housings">Mounts & Housing (30)</button>
+                        <button class="pill-btn" data-category="Flanged Components & Transmission Brackets">Flanged & Transmission (30)</button>
+                        <button class="pill-btn" data-category="Machined Tooling Jigs & Complex Slotted Solids">Tooling Jigs (30)</button>
+                    </div>
+                </div>
+
+                <!-- Scrollable Drawing Items List -->
+                <div class="playlist-scroll-area" id="pdf-doc-list-container">
+                    <!-- Populated dynamically via app.js -->
+                </div>
+
+            </div>
+        </aside>
+
+        <!-- COLUMN 2 (TENGAH): MAIN DOCUMENT VIEWER STAGE -->
+        <main class="col-stage">
+            <div class="stage-card">
+                
+                <!-- Stage Header Bar -->
+                <div class="stage-top-bar">
+                    <div class="stage-title-group">
+                        <span class="badge-stage-id" id="active-doc-badge">PDF-001</span>
+                        <div class="stage-heading-text">
+                            <h1 id="active-doc-title">Latihan Klem Perkakas Presisi (Machinist Clamp Assembly & Fixture)</h1>
+                            <span class="stage-file-info" id="active-doc-sub">ENG_01_Advanced_Clamp_Fixture.pdf • 232 KB • Format A4 Landscape</span>
+                        </div>
+                    </div>
+                    
+                    <div class="stage-badges-row">
+                        <span class="badge-iso-highlight">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                            Tampak 3D Isometri
+                        </span>
+                        <span class="badge-dwg-no" id="stage-drawing-no">DWG-ENG-01</span>
+                    </div>
+                </div>
+
+                <!-- Embedded PDF Viewer Container -->
+                <div class="stage-viewer-container">
+                    <iframe id="pdf-frame" class="stage-pdf-frame" src="pdf/ENG_01_Advanced_Clamp_Fixture.pdf" type="application/pdf"></iframe>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- COLUMN 3 (KANAN): TECHNICAL SPECIFICATIONS & ACTIONS -->
+        <aside class="col-specs">
+            <div class="specs-card">
+                
+                <div class="specs-card-header">
+                    <h3>Spesifikasi Teknik Komponen</h3>
+                    <span class="specs-verified-tag">Verified CAD</span>
+                </div>
+
+                <!-- Specs List Grid -->
+                <div class="specs-body" id="specs-body-container">
+                    <!-- Populated dynamically via app.js -->
+                </div>
+
+                <!-- Autodesk Inventor Guidance Card -->
+                <div class="inventor-guide-card">
+                    <div class="guide-header">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a66c2" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <h4>Panduan Fitur Autodesk Inventor</h4>
+                    </div>
+                    <p id="inventor-guide-text">
+                        Gunakan fitur Extrude, Revolve, dan Hole Feature untuk memodelkan solid 3D sesuai dimensi yang tertera pada lembar kerja dan tampak isometri di sudut kanan atas.
+                    </p>
+                </div>
+
+                <!-- Quick Action Button Stack -->
+                <div class="specs-action-stack">
+                    <button class="btn-linkedin-main" id="btn-download-pdf">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Unduh File PDF Asli
+                    </button>
+
+                    <button class="btn-linkedin-sub" id="btn-open-tab">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                        Buka di Tab Baru
+                    </button>
+
+                    <button class="btn-linkedin-sub" id="btn-print-doc">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                            <rect x="6" y="14" width="12" height="8"></rect>
+                        </svg>
+                        Cetak Dokumen
+                    </button>
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>

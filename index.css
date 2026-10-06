@@ -1,0 +1,686 @@
+/* ==========================================================================
+   ECEK2 CAD - LINKEDIN STYLE DESIGN SYSTEM (PURE LIGHT THEME)
+   ========================================================================== */
+
+:root {
+    --li-bg-app: #F3F2EF;
+    --li-bg-card: #FFFFFF;
+    --li-bg-hover: #F8FAFD;
+    --li-bg-active: #EBF3F9;
+    --li-bg-input: #EDF3F8;
+    
+    --li-blue-primary: #0A66C2;
+    --li-blue-hover: #004182;
+    --li-blue-light: rgba(10, 102, 194, 0.08);
+    --li-blue-border: rgba(10, 102, 194, 0.3);
+
+    --li-text-primary: rgba(0, 0, 0, 0.9);
+    --li-text-secondary: rgba(0, 0, 0, 0.6);
+    --li-text-dim: rgba(0, 0, 0, 0.45);
+    
+    --li-border: rgba(0, 0, 0, 0.08);
+    --li-border-divider: rgba(0, 0, 0, 0.06);
+    
+    --li-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.03);
+    --li-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+
+    --font-sans: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--li-bg-app);
+    color: var(--li-text-primary);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   1. TOP NAVIGATION BAR (LINKEDIN STYLE)
+   ========================================================================== */
+.linkedin-navbar {
+    width: 100%;
+    height: 54px;
+    background-color: var(--li-bg-card);
+    border-bottom: 1px solid var(--li-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    z-index: 100;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.linkedin-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.linkedin-logo-box {
+    width: 34px;
+    height: 34px;
+    background-color: var(--li-blue-primary);
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 1.15rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: -0.5px;
+    box-shadow: 0 1px 2px rgba(10, 102, 194, 0.4);
+}
+
+.linkedin-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--li-text-primary);
+    line-height: 1.1;
+    letter-spacing: -0.3px;
+}
+
+.brand-sub {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--li-blue-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.linkedin-search-wrapper {
+    position: relative;
+    width: 380px;
+    display: flex;
+    align-items: center;
+}
+
+.linkedin-search-icon {
+    position: absolute;
+    left: 12px;
+    color: var(--li-text-secondary);
+    pointer-events: none;
+}
+
+#navbar-search-input {
+    width: 100%;
+    height: 36px;
+    background-color: var(--li-bg-input);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 0 12px 0 36px;
+    font-size: 13px;
+    color: var(--li-text-primary);
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+#navbar-search-input:focus {
+    background-color: #FFFFFF;
+    border-color: var(--li-blue-primary);
+    box-shadow: 0 0 0 1px var(--li-blue-primary);
+}
+
+#navbar-search-input::placeholder {
+    color: var(--li-text-secondary);
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.btn-nav-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 34px;
+    padding: 0 14px;
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+}
+
+.btn-nav-primary {
+    background-color: var(--li-blue-primary);
+    color: #FFFFFF;
+    border: 1px solid var(--li-blue-primary);
+}
+
+.btn-nav-primary:hover {
+    background-color: var(--li-blue-hover);
+    border-color: var(--li-blue-hover);
+}
+
+.btn-nav-secondary {
+    background-color: transparent;
+    color: var(--li-text-secondary);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.btn-nav-secondary:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: var(--li-text-primary);
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   2. 3-COLUMN WORKSPACE GRID
+   ========================================================================== */
+.linkedin-workspace {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 54px);
+    overflow: hidden;
+    padding: 10px 14px;
+    gap: 12px;
+}
+
+/* Base Card Style */
+.playlist-card, .stage-card, .specs-card {
+    background-color: var(--li-bg-card);
+    border: 1px solid var(--li-border);
+    border-radius: 8px;
+    box-shadow: var(--li-shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* ==========================================================================
+   COLUMN 1: PLAYLIST (LEFT)
+   ========================================================================== */
+.col-playlist {
+    width: 360px;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.playlist-header {
+    padding: 14px 16px 10px;
+    border-bottom: 1px solid var(--li-border-divider);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.playlist-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.playlist-title-row h2 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--li-text-primary);
+}
+
+.playlist-counter-badge {
+    background-color: var(--li-blue-light);
+    color: var(--li-blue-primary);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--li-blue-border);
+}
+
+.playlist-subtitle {
+    font-size: 11.5px;
+    color: var(--li-text-secondary);
+}
+
+.playlist-filter-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding-top: 4px;
+}
+
+.pill-btn {
+    background-color: var(--li-bg-card);
+    color: var(--li-text-secondary);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.pill-btn:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: var(--li-text-primary);
+}
+
+.pill-btn.active {
+    background-color: var(--li-blue-primary);
+    color: #FFFFFF;
+    border-color: var(--li-blue-primary);
+}
+
+/* Scroll Area for Items */
+.playlist-scroll-area {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.playlist-scroll-area::-webkit-scrollbar {
+    width: 6px;
+}
+.playlist-scroll-area::-webkit-scrollbar-track {
+    background: transparent;
+}
+.playlist-scroll-area::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+}
+
+/* Playlist Card Item */
+.playlist-item {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--li-border-divider);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.playlist-item:hover {
+    background-color: var(--li-bg-hover);
+}
+
+.playlist-item.active {
+    background-color: var(--li-bg-active);
+    border-left: 3px solid var(--li-blue-primary);
+    padding-left: 11px;
+}
+
+.item-thumb-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    background-color: #EDF3F8;
+    color: var(--li-blue-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.playlist-item.active .item-thumb-box {
+    background-color: var(--li-blue-primary);
+    color: #FFFFFF;
+}
+
+.item-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.item-id {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--li-blue-primary);
+    font-family: var(--font-mono);
+}
+
+.item-badge-iso {
+    font-size: 10px;
+    font-weight: 700;
+    color: #0284c7;
+    background-color: rgba(2, 132, 199, 0.1);
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.item-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--li-text-primary);
+    line-height: 1.3;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--li-text-secondary);
+}
+
+.item-dwg-no {
+    font-family: var(--font-mono);
+    color: var(--li-text-dim);
+}
+
+/* ==========================================================================
+   COLUMN 2: STAGE (CENTER)
+   ========================================================================== */
+.col-stage {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+}
+
+.stage-top-bar {
+    padding: 10px 18px;
+    border-bottom: 1px solid var(--li-border-divider);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.stage-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.badge-stage-id {
+    background-color: var(--li-blue-primary);
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    padding: 3px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.stage-heading-text {
+    min-width: 0;
+}
+
+.stage-heading-text h1 {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--li-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.25;
+}
+
+.stage-file-info {
+    font-size: 11px;
+    color: var(--li-text-secondary);
+}
+
+.stage-badges-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.badge-iso-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #0369a1;
+    background-color: #e0f2fe;
+    border: 1px solid #bae6fd;
+    padding: 3px 9px;
+    border-radius: 12px;
+}
+
+.badge-dwg-no {
+    font-size: 11px;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    color: var(--li-text-dim);
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+/* Stage Viewer Frame */
+.stage-viewer-container {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #525659;
+}
+
+.stage-pdf-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* ==========================================================================
+   COLUMN 3: SPECS PANEL (RIGHT)
+   ========================================================================== */
+.col-specs {
+    width: 320px;
+    flex-shrink: 0;
+    height: 100%;
+}
+
+.specs-card-header {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--li-border-divider);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.specs-card-header h3 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--li-text-primary);
+}
+
+.specs-verified-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #166534;
+    background-color: #dcfce7;
+    border: 1px solid #bbf7d0;
+    padding: 2px 7px;
+    border-radius: 10px;
+}
+
+.specs-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.specs-body::-webkit-scrollbar {
+    width: 5px;
+}
+.specs-body::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+}
+
+.spec-item-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--li-border-divider);
+}
+
+.spec-label {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--li-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.spec-val {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--li-text-primary);
+}
+
+.spec-val.highlight {
+    color: var(--li-blue-primary);
+}
+
+/* Inventor Guidance Box */
+.inventor-guide-card {
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 8px 16px 0;
+}
+
+.guide-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+
+.guide-header h4 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--li-blue-primary);
+}
+
+.inventor-guide-card p {
+    font-size: 11.5px;
+    color: var(--li-text-secondary);
+    line-height: 1.45;
+}
+
+/* Action Buttons Stack */
+.specs-action-stack {
+    padding: 12px 16px;
+    border-top: 1px solid var(--li-border-divider);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.btn-linkedin-main {
+    width: 100%;
+    height: 38px;
+    border-radius: 20px;
+    background-color: var(--li-blue-primary);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 13px;
+    border: 1px solid var(--li-blue-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+    box-shadow: 0 1px 3px rgba(10, 102, 194, 0.3);
+}
+
+.btn-linkedin-main:hover {
+    background-color: var(--li-blue-hover);
+    border-color: var(--li-blue-hover);
+}
+
+.btn-linkedin-sub {
+    width: 100%;
+    height: 34px;
+    border-radius: 20px;
+    background-color: transparent;
+    color: var(--li-blue-primary);
+    font-weight: 600;
+    font-size: 12px;
+    border: 1px solid var(--li-blue-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: inherit;
+}
+
+.btn-linkedin-sub:hover {
+    background-color: var(--li-blue-light);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .col-specs {
+        display: none;
+    }
+}
+
+@media (max-width: 800px) {
+    .linkedin-workspace {
+        flex-direction: column;
+    }
+    .col-playlist {
+        width: 100%;
+        height: 250px;
+    }
+}

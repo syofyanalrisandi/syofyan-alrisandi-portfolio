@@ -1,0 +1,40 @@
+# Ignore personal documents and non-project files
+*.docx
+*.doc
+*.ipt
+*.iam
+*.idw
+*.dwg
+*.jpeg
+*.jpg
+*.png
+*.stp
+*.step
+!pdf/*.png
+*.tmp
+*.log
+
+# Ignore scratch & temporary utility scripts
+build_*.ps1
+lib/
+test_*.ps1
+check_*.ps1
+inspect_*.ps1
+download_*.ps1
+cleanup_*.ps1
+clean.ps1
+convert_*.ps1
+count_*.ps1
+finish_*.ps1
+generate_*.ps1
+list_*.ps1
+make_*.ps1
+scan_*.ps1
+search_*.ps1
+verify_*.ps1
+
+# Ignore system / editor
+.vscode/
+.idea/
+.gemini/
+Thumbs.db
