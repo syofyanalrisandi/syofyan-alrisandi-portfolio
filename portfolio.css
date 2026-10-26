@@ -2015,35 +2015,89 @@ button {
 }
 
 @media (max-width: 1040px) {
-  .navbar .nav-menu {
-    position: fixed;
-    top: 66px;
-    left: 0;
-    right: 0;
-    background: var(--bg-secondary);
-    flex-direction: column;
-    padding: 20px 24px;
-    gap: 8px;
+  .navbar {
+    height: auto !important;
+    min-height: 96px;
+    padding: 0 !important;
+    background: var(--bg-glass);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border-bottom: 1px solid var(--border-subtle);
-    display: none;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
   }
-  .navbar .nav-menu.open {
-    display: flex;
+  .navbar .container {
+    flex-wrap: wrap !important;
+    padding: 8px 14px 6px !important;
+    gap: 8px 10px;
+    height: auto !important;
   }
-  .navbar .nav-menu .nav-link {
-    width: 100%;
-    padding: 10px 14px;
-    font-size: 0.92rem;
+  .nav-brand {
+    order: 1;
+    flex-shrink: 0;
+  }
+  .nav-actions {
+    order: 2;
+    flex-shrink: 0;
+    gap: 6px;
   }
   .mobile-menu-toggle {
-    display: block;
+    display: none !important;
+  }
+  /* The exact 8-item navigation bar requested by user: Always visible on mobile */
+  .navbar .nav-menu {
+    order: 3;
+    display: flex !important;
+    position: static !important;
+    width: 100% !important;
+    flex-basis: 100% !important;
+    flex-direction: row !important;
+    align-items: center;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap !important;
+    scrollbar-width: none;
+    padding: 6px 2px 4px !important;
+    margin: 2px 0 0 !important;
+    gap: 6px !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-top: 1px solid var(--border-subtle) !important;
+  }
+  .navbar .nav-menu::-webkit-scrollbar {
+    display: none;
+  }
+  .navbar .nav-menu li {
+    flex-shrink: 0;
+    list-style: none;
+  }
+  .navbar .nav-menu .nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 13px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    color: var(--text-muted);
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-subtle);
+    transition: all 0.2s ease;
+    text-decoration: none;
+  }
+  .navbar .nav-menu .nav-link:hover,
+  .navbar .nav-menu .nav-link.active {
+    color: var(--accent-cyan);
+    background: rgba(14, 165, 233, 0.14);
+    border-color: rgba(14, 165, 233, 0.4);
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.18);
   }
 }
 
 /* ==========================================================================
    ADVANCED MOBILE RESPONSIVE ENGINE (SMARTPHONES & TABLETS)
-   Touch ergonomics, 0-overflow, bottom-dock navigation & clean portrait framing
+   Touch ergonomics, 0-overflow, prominent top horizontal navigation & clean portrait framing
    ========================================================================== */
 @media (max-width: 768px) {
   /* Prevent horizontal page drift */
@@ -2053,23 +2107,14 @@ button {
   }
 
   body {
-    padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: 0px !important;
   }
 
   .container {
     padding: 0 16px;
   }
 
-  /* Compact Navbar for Mobile */
-  .navbar {
-    height: 58px;
-  }
-  .navbar .container {
-    padding: 0 12px;
-  }
-  .navbar .nav-menu {
-    top: 58px;
-  }
+  /* Compact Brand for Mobile */
   .nav-avatar-img {
     width: 32px;
     height: 32px;
@@ -2113,7 +2158,7 @@ button {
 
   /* Hero Section Mobile */
   .hero-section {
-    padding: 76px 0 32px;
+    padding: 114px 0 32px;
   }
   .hero-grid {
     grid-template-columns: 1fr;
@@ -2691,70 +2736,12 @@ button {
     font-size: 0.8rem;
   }
 
-  /* Mobile Bottom App Navigation Bar */
-  .mobile-bottom-nav {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: var(--bg-glass);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-top: 1px solid var(--border-subtle);
-    z-index: 999;
-    justify-content: space-around;
-    align-items: center;
-    padding: 4px 6px calc(4px + env(safe-area-inset-bottom, 0px));
-    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-  }
-  .mobile-nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
-    color: var(--text-dim);
-    font-size: 0.68rem;
-    font-weight: 600;
-    font-family: var(--font-sans);
-    text-decoration: none;
-    flex: 1;
-    padding: 6px 0;
-    border-radius: var(--radius-sm);
-    transition: all 0.2s ease;
-    position: relative;
-  }
-  .mobile-nav-item svg {
-    transition: transform 0.2s ease;
-  }
-  .mobile-nav-item:hover,
-  .mobile-nav-item.active {
-    color: var(--accent-cyan);
-  }
-  .mobile-nav-item.active svg {
-    transform: translateY(-2px);
-    color: var(--accent-cyan);
-  }
-  .mobile-nav-item.active::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 3px;
-    border-radius: 0 0 3px 3px;
-    background: var(--accent-cyan);
-  }
-
-  /* Floating WhatsApp Button Placed Safely Above Bottom Nav */
+  /* Floating WhatsApp Button */
   .floating-whatsapp {
-    bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
-    right: 14px !important;
-    width: 48px !important;
-    height: 48px !important;
+    bottom: 24px !important;
+    right: 18px !important;
+    width: 50px !important;
+    height: 50px !important;
   }
 
   /* HUD coordinate tracker hidden on touch devices */

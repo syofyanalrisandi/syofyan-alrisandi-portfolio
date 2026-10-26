@@ -515,7 +515,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initDocViewer();
   initSmoothScroll();
   initMobileMenu();
-  initMobileBottomNav();
+  initNavScrollSpy();
   initModalEvents();
   initContactForm();
   initCard3DTilt();
@@ -1575,22 +1575,25 @@ function initMobileMenu() {
   });
 }
 
-// 18. Mobile Bottom App Navigation Spy & Tap
-function initMobileBottomNav() {
-  const bottomNavItems = document.querySelectorAll(".mobile-nav-item");
-  if (!bottomNavItems || bottomNavItems.length === 0) return;
+// 18. Navigation ScrollSpy for Header Menu (Always visible & active on Mobile)
+function initNavScrollSpy() {
+  const navLinks = document.querySelectorAll(".navbar .nav-menu .nav-link");
+  if (!navLinks || navLinks.length === 0) return;
 
   const sections = [
-    { id: "hero", navId: "hero" },
-    { id: "laboratorium-interaktif", navId: "laboratorium-interaktif" },
-    { id: "proyek", navId: "proyek" },
-    { id: "dokumen-portfolio", navId: "dokumen-portfolio" },
-    { id: "kontak", navId: "kontak" }
+    { id: "tentang", href: "#tentang" },
+    { id: "laboratorium-interaktif", href: "#laboratorium-interaktif" },
+    { id: "keahlian", href: "#keahlian" },
+    { id: "proyek", href: "#proyek" },
+    { id: "pengalaman", href: "#pengalaman" },
+    { id: "prestasi", href: "#prestasi" },
+    { id: "dokumen-portfolio", href: "#dokumen-portfolio" },
+    { id: "kontak", href: "#kontak" }
   ];
 
-  function updateActiveNav() {
-    const scrollPos = window.scrollY + 180;
-    let activeNav = "hero";
+  function updateActiveNavLink() {
+    const scrollPos = window.scrollY + 140;
+    let currentHref = "";
 
     for (let i = 0; i < sections.length; i++) {
       const el = document.getElementById(sections[i].id);
@@ -1598,32 +1601,27 @@ function initMobileBottomNav() {
         const top = el.offsetTop;
         const height = el.offsetHeight;
         if (scrollPos >= top && scrollPos < top + height) {
-          activeNav = sections[i].navId;
+          currentHref = sections[i].href;
         }
       }
     }
 
-    bottomNavItems.forEach(item => {
-      if (item.getAttribute("data-nav") === activeNav) {
-        item.classList.add("active");
+    navLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === currentHref) {
+        link.classList.add("active");
+        // Center the active pill smoothly on mobile horizontal bar
+        if (window.innerWidth <= 1040) {
+          link.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+        }
       } else {
-        item.classList.remove("active");
+        link.classList.remove("active");
       }
     });
   }
 
-  window.addEventListener("scroll", updateActiveNav, { passive: true });
-  updateActiveNav();
-
-  bottomNavItems.forEach(item => {
-    item.addEventListener("click", () => {
-      bottomNavItems.forEach(i => i.classList.remove("active"));
-      item.classList.add("active");
-      // Close mobile dropdown menu if open
-      const navMenu = document.getElementById("nav-menu");
-      if (navMenu) navMenu.classList.remove("open");
-    });
-  });
+  window.addEventListener("scroll", updateActiveNavLink, { passive: true });
+  updateActiveNavLink();
 }
 
 // 19. Contact Form
