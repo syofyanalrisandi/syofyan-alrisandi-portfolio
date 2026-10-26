@@ -515,6 +515,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initDocViewer();
   initSmoothScroll();
   initMobileMenu();
+  initMobileBottomNav();
   initModalEvents();
   initContactForm();
   initCard3DTilt();
@@ -1574,7 +1575,58 @@ function initMobileMenu() {
   });
 }
 
-// 18. Contact Form
+// 18. Mobile Bottom App Navigation Spy & Tap
+function initMobileBottomNav() {
+  const bottomNavItems = document.querySelectorAll(".mobile-nav-item");
+  if (!bottomNavItems || bottomNavItems.length === 0) return;
+
+  const sections = [
+    { id: "hero", navId: "hero" },
+    { id: "laboratorium-interaktif", navId: "laboratorium-interaktif" },
+    { id: "proyek", navId: "proyek" },
+    { id: "dokumen-portfolio", navId: "dokumen-portfolio" },
+    { id: "kontak", navId: "kontak" }
+  ];
+
+  function updateActiveNav() {
+    const scrollPos = window.scrollY + 180;
+    let activeNav = "hero";
+
+    for (let i = 0; i < sections.length; i++) {
+      const el = document.getElementById(sections[i].id);
+      if (el) {
+        const top = el.offsetTop;
+        const height = el.offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          activeNav = sections[i].navId;
+        }
+      }
+    }
+
+    bottomNavItems.forEach(item => {
+      if (item.getAttribute("data-nav") === activeNav) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveNav, { passive: true });
+  updateActiveNav();
+
+  bottomNavItems.forEach(item => {
+    item.addEventListener("click", () => {
+      bottomNavItems.forEach(i => i.classList.remove("active"));
+      item.classList.add("active");
+      // Close mobile dropdown menu if open
+      const navMenu = document.getElementById("nav-menu");
+      if (navMenu) navMenu.classList.remove("open");
+    });
+  });
+}
+
+// 19. Contact Form
 function initContactForm() {
   const form = document.getElementById("contact-form");
   if (!form) return;
