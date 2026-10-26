@@ -1,42 +1,26 @@
-# Ignore personal documents and non-project files
-*.docx
-*.doc
+# CAD Model Raw Files (Autodesk Inventor & STEP files)
 *.ipt
 *.iam
 *.idw
-*.dwg
-/*.pdf
-!pdf/*.pdf
-*.jpeg
-*.jpg
-*.png
 *.stp
 *.step
-!pdf/*.png
-*.tmp
-*.log
+OldVersions/
 
-# Ignore scratch & temporary utility scripts
-build_*.ps1
-lib/
-test_*.ps1
-check_*.ps1
-inspect_*.ps1
-download_*.ps1
-cleanup_*.ps1
-clean.ps1
-convert_*.ps1
-count_*.ps1
-finish_*.ps1
-generate_*.ps1
-list_*.ps1
-make_*.ps1
-scan_*.ps1
-search_*.ps1
-verify_*.ps1
+# Scratch & Maintenance utility scripts (Keep server.ps1)
+*.ps1
+!server.ps1
 
-# Ignore system / editor
+# Backup & scratch files
+index_ecek2_cad_backup.*
+temp_*
+photo_624235370953907059*.jpg
+WhatsApp*.jpeg
+MHE acc3.jpg
+
+# System & IDE
 .vscode/
 .idea/
 .gemini/
 Thumbs.db
+*.tmp
+*.log
