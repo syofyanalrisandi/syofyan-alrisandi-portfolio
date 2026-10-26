@@ -1,0 +1,32 @@
+# Exclude Git internals from static assets upload
+.git
+.git/**
+.github
+.github/**
+.gitignore
+
+# Cloudflare & Wrangler files
+.wrangler
+.wrangler/**
+.cloudflareignore
+.assetsignore
+wrangler.toml
+
+# Scratch scripts & temporary utilities
+*.ps1
+temp_*
+*.tmp
+*.log
+
+# Office documents
+*.docx
+*.doc
+
+# CAD raw binaries
+*.ipt
+*.iam
+*.idw
+*.stp
+*.step
+OldVersions
+OldVersions/**

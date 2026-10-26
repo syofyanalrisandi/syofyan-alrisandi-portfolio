@@ -1,0 +1,32 @@
+# Exclude Git internals from static assets upload (fixes Cloudflare >25MB pack file error)
+.git
+.git/**
+.github
+.github/**
+.gitignore
+
+# Cloudflare & Wrangler files
+.wrangler
+.wrangler/**
+.cloudflareignore
+.assetsignore
+wrangler.toml
+
+# Scratch scripts & temporary utilities
+*.ps1
+temp_*
+*.tmp
+*.log
+
+# Office documents (kept in GitHub repository, omitted from public static web assets)
+*.docx
+*.doc
+
+# CAD raw binaries
+*.ipt
+*.iam
+*.idw
+*.stp
+*.step
+OldVersions
+OldVersions/**

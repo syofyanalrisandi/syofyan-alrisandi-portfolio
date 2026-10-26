@@ -21,6 +21,7 @@ MHE acc3.jpg
 .vscode/
 .idea/
 .gemini/
+.wrangler/
 Thumbs.db
 *.tmp
 *.log

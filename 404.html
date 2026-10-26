@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Syofyan Alrisandi, S.T. | Mechanical Design Engineer & Structural Dynamicist</title>
+  
+  <meta name="description" content="Portofolio resmi Syofyan Alrisandi, S.T. - Sarjana Teknik Mesin Universitas Andalas (IPK 3.61). Spesialis CAD 3D Autodesk Inventor, Simulasi FEA MSC Nastran/Patran, Uji Aerodinamika Terowongan Angin ILST BRIN, dan Kendaraan Otonom.">
+  <meta name="author" content="Syofyan Alrisandi">
+  <meta name="keywords" content="Syofyan Alrisandi, Mechanical Engineer, Teknik Mesin, Autodesk Inventor, FEA, MSC Nastran, Patran, BRIN, N219 Amphibious, UAV, KKCTBN, KRTI, Andalas University">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Syofyan Alrisandi, S.T. | Mechanical Design Engineer & FEA Specialist">
+  <meta property="og:description" content="Portofolio Teknik Mesin: Simulasi Getaran Struktur UAV, Analisis Beban Sayap N219 Amfibi di ILST BRIN, Wahana Otonom, dan Perancangan Mesin Industri.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar" id="reading-progress"></div>
+
+  <!-- Ambient Glowing Accents (Soft & Luminous) -->
+  <div class="ambient-glow"></div>
+  <div class="ambient-glow-2"></div>
+  <div class="ambient-glow-3"></div>
+
+  <!-- HUD Coordinate Tracker Overlay (Cyber-Precision) -->
+  <div class="hud-tracker" id="hud-tracker">
+    <div class="hud-indicator">
+      <span class="hud-pulse"></span>
+      <span id="hud-coord-text">CAD 3D • X: 0.00 mm | Y: 0.00 mm</span>
+    </div>
+  </div>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-brand">
+        <img src="assets/syofyan_headshot.jpg" alt="Syofyan Alrisandi, S.T." class="nav-avatar-img">
+        <div class="nav-title-group">
+          <span class="name">Syofyan Alrisandi, <span class="degree-accent">S.T.</span></span>
+          <span class="badge-title">Mechanical Engineer</span>
+        </div>
+      </a>
+
+      <!-- Minimalist Navigation Links -->
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#tentang" class="nav-link" data-i18n-id="Tentang" data-i18n-en="About">Tentang</a></li>
+        <li><a href="#laboratorium-interaktif" class="nav-link" data-i18n-id="Lab 3D" data-i18n-en="3D Lab">Lab 3D</a></li>
+        <li><a href="#keahlian" class="nav-link" data-i18n-id="Keahlian" data-i18n-en="Expertise">Keahlian</a></li>
+        <li><a href="#proyek" class="nav-link" data-i18n-id="Proyek" data-i18n-en="Projects">Proyek</a></li>
+        <li><a href="#pengalaman" class="nav-link" data-i18n-id="Pengalaman" data-i18n-en="Experience">Pengalaman</a></li>
+        <li><a href="#prestasi" class="nav-link" data-i18n-id="Prestasi" data-i18n-en="Awards">Prestasi</a></li>
+        <li><a href="#dokumen-portfolio" class="nav-link" data-i18n-id="Lembar PDF" data-i18n-en="PDF Sheets">Lembar PDF</a></li>
+        <li><a href="#kontak" class="nav-link" data-i18n-id="Kontak" data-i18n-en="Contact">Kontak</a></li>
+      </ul>
+
+      <!-- Minimalist Action Buttons -->
+      <div class="nav-actions">
+        <!-- Recruiter Pill Button -->
+        <button class="btn-recruiter-action" id="open-recruiter-drawer" title="Buka Dossier Cepat untuk Recruiter">
+          <span class="recruiter-pulse"></span>
+          <span data-i18n-id="Recruiter" data-i18n-en="Recruiter">Recruiter</span>
+        </button>
+
+        <!-- Language Switcher Button -->
+        <button class="btn-icon" id="lang-toggle-btn" title="Ganti Bahasa / Switch Language" style="font-family: var(--font-mono); font-weight: 700; font-size: 0.78rem;">
+          ID
+        </button>
+
+        <!-- Dark/Light Theme Button -->
+        <button class="btn-icon" id="theme-toggle-btn" title="Ganti Tema">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+
+        <!-- Download CV / Portfolio PDF Button -->
+        <a href="portfolio_syofyan_alrisandi.pdf" download="Portfolio_Syofyan_Alrisandi_ST.pdf" class="btn-cv-download" title="Unduh CV Portofolio PDF">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span data-i18n-id="CV PDF" data-i18n-en="CV PDF">CV PDF</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Hero Left Column: Information & Bio -->
+          <div class="hero-content">
+            <div class="hero-badge-status">
+              <span class="pulse-dot"></span>
+              <span data-i18n-id="TERBUKA UNTUK KARIR • MECHANICAL & R&D ENGINEERING" data-i18n-en="OPEN TO WORK • MECHANICAL & R&D ENGINEERING">TERBUKA UNTUK KARIR • MECHANICAL &amp; R&amp;D ENGINEERING</span>
+            </div>
+
+            <h1 class="hero-name">
+              Syofyan Alrisandi, <span class="title-accent">S.T.</span>
+            </h1>
+
+            <div class="hero-degree">
+              <span>Mechanical Design &amp; Structural Dynamicist</span>
+              <span class="gpa-pill">IPK 3.61 / 4.00</span>
+            </div>
+
+            <p class="hero-bio" data-i18n-id="Lulusan Sarjana Teknik Mesin Universitas Andalas (2024) dengan keahlian mendalam pada prinsip rekayasa mekanika, perancangan sistem, dan optimasi struktur. Berpengalaman dalam pemodelan 3D CAD Autodesk Inventor & SolidWorks, simulasi elemen hingga (FEA) MSC Nastran/Patran, uji dinamika fluida terowongan angin ILST di Badan Riset dan Inovasi Nasional (BRIN), serta pengembangan purwarupa kendaraan otonom." data-i18n-en="Bachelor of Mechanical Engineering graduate from Andalas University (2024) with in-depth understanding of mechanical engineering principles, system design, and structural optimization. Experienced in 3D CAD modeling (Autodesk Inventor & SolidWorks), FEA simulation (MSC Nastran/Patran), wind tunnel aerodynamic testing (ILST at BRIN), and autonomous vehicle prototyping.">
+              Lulusan Sarjana Teknik Mesin Universitas Andalas (2024) dengan keahlian mendalam pada prinsip rekayasa mekanika, perancangan sistem, dan optimasi struktur. Berpengalaman dalam pemodelan 3D CAD Autodesk Inventor &amp; SolidWorks, simulasi elemen hingga (FEA) MSC Nastran/Patran, uji dinamika fluida terowongan angin ILST di Badan Riset dan Inovasi Nasional (BRIN), serta pengembangan purwarupa kendaraan otonom.
+            </p>
+
+            <!-- Creative Engineering Toolset Chips -->
+            <div class="hero-tools-row">
+              <span class="tool-chip featured">📐 Autodesk Inventor (Advanced)</span>
+              <span class="tool-chip featured">🔬 MSC Nastran/Patran</span>
+              <span class="tool-chip">🌪️ ILST Wind Tunnel BRIN</span>
+              <span class="tool-chip">📊 Modal Dynamics (FRF)</span>
+              <span class="tool-chip">🛩️ Pixhawk / ArduPilot</span>
+              <span class="tool-chip">💻 MATLAB Validation</span>
+            </div>
+
+            <!-- Dynamic Harmonic Waveform Visualizer (LDS UNAND Vibration Theme) -->
+            <div class="hero-waveform-container">
+              <div class="hero-waveform-header">
+                <span>✦ RESPONS GETARAN DINAMIK STRUKTUR (FRF SIMULASI &amp; EXPERIMENTAL MODAL)</span>
+                <span>f₁: 16.5 Hz • f₂: 53.3 Hz • f₆: 139.4 Hz (Error 0.30%)</span>
+              </div>
+              <svg class="hero-waveform-svg" viewBox="0 0 800 60" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="wave-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#0284c7" />
+                    <stop offset="50%" stop-color="#38bdf8" />
+                    <stop offset="100%" stop-color="#6366f1" />
+                  </linearGradient>
+                </defs>
+                <path class="wave-path" id="live-wave-path" d="M0,30 Q100,5 200,30 T400,30 T600,30 T800,30" />
+                <path class="wave-path-secondary" id="live-wave-path-2" d="M0,30 Q100,45 200,30 T400,30 T600,30 T800,30" />
+              </svg>
+            </div>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-ctas">
+              <button class="btn-recruiter-hero" id="hero-open-recruiter-btn">
+                <span class="pulse-dot-green"></span>
+                <span data-i18n-id="💼 Recruiter Quick-Sheet" data-i18n-en="💼 Recruiter Quick-Sheet">💼 Recruiter Quick-Sheet</span>
+              </button>
+
+              <a href="#laboratorium-interaktif" class="btn-interactive-hero">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                <span data-i18n-id="⚡ Lab 3D & Simulasi" data-i18n-en="⚡ 3D Lab & Sim">⚡ Lab 3D &amp; Simulasi</span>
+              </a>
+
+              <a href="#proyek" class="btn-primary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                <span data-i18n-id="Proyek Rekayasa" data-i18n-en="Engineering Projects">Proyek Rekayasa</span>
+              </a>
+
+              <a href="portfolio_syofyan_alrisandi.pdf" download="Portfolio_Syofyan_Alrisandi_ST.pdf" class="btn-secondary">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                <span data-i18n-id="Unduh PDF" data-i18n-en="Download PDF">Unduh PDF</span>
+              </a>
+
+              <a href="https://wa.me/6285365103947?text=Halo%20Syofyan%20Alrisandi,%20saya%20tertarik%20dengan%20portofolio%20Anda." target="_blank" rel="noopener noreferrer" class="btn-secondary" style="border-color: rgba(37, 211, 102, 0.4); color: #059669;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                <span>WhatsApp</span>
+              </a>
+            </div>
+
+            <!-- Contact & Social Highlights -->
+            <div class="hero-contact-row">
+              <div class="hero-contact-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Padang City, West Sumatera</span>
+              </div>
+              <div class="hero-contact-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <a href="mailto:syofyanalrisandi12@gmail.com">syofyanalrisandi12@gmail.com</a>
+              </div>
+              <div class="hero-contact-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                <a href="https://www.linkedin.com/in/syofyan-alrisandi-314381313/" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Hero Right Column: Executive Engineer Portrait Card -->
+          <div class="hero-portrait-card">
+            <div class="portrait-image-wrapper">
+              <img src="assets/syofyan_portrait_34.jpg" alt="Syofyan Alrisandi, S.T. - Mechanical Design Engineer" class="portrait-img">
+            </div>
+
+            <!-- Floating Badges: Positioned Safely with Generous Distance from Face -->
+            <div class="floating-badge badge-mid-left">
+              <span class="badge-icon">🎓</span>
+              <div>
+                <div class="badge-title">IPK 3.61 / 4.00</div>
+                <div class="badge-sub">Teknik Mesin UNAND</div>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-mid-right">
+              <span class="badge-icon">✈️</span>
+              <div>
+                <div class="badge-title">R&amp;D Intern @ BRIN</div>
+                <div class="badge-sub">ILST Wind Tunnel Serpong</div>
+              </div>
+            </div>
+
+            <div class="floating-badge badge-bottom-left">
+              <span class="badge-icon">🏆</span>
+              <div>
+                <div class="badge-title">9+ Prestasi Nasional</div>
+                <div class="badge-sub">Puspresnas, PIMNAS, IEM</div>
+              </div>
+            </div>
+
+            <!-- Quick Profile Bar Underneath -->
+            <div class="portrait-card-footer">
+              <div class="portrait-footer-info">
+                <div class="portrait-name">Syofyan Alrisandi, S.T.</div>
+                <div class="portrait-role">Mechanical Design &amp; FEA Specialist</div>
+              </div>
+              <a href="#proyek" class="portrait-btn-explore">
+                <span>Lihat Proyek Rekayasa</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS COUNTER BAR -->
+    <section class="metrics-bar-section">
+      <div class="container">
+        <div class="metrics-grid">
+          
+          <div class="metric-card">
+            <div class="metric-number">3.61</div>
+            <div class="metric-label" data-i18n-id="IPK Sarjana Teknik Mesin UNAND (Skala 4.00)" data-i18n-en="Mechanical Engineering GPA (4.00 Scale)">IPK Sarjana Teknik Mesin UNAND (Skala 4.00)</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-number">8+</div>
+            <div class="metric-label" data-i18n-id="Proyek Rekayasa FEA, Aero & Mesin Industri" data-i18n-en="Major FEA, Aerospace & Machine Projects">Proyek Rekayasa FEA, Aero & Mesin Industri</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-number">9+</div>
+            <div class="metric-label" data-i18n-id="Juara & Prestasi Lomba Nasional / Internasional" data-i18n-en="National & International Awards">Juara & Prestasi Lomba Nasional / Internasional</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-number">153+</div>
+            <div class="metric-label" data-i18n-id="Mahasiswa Dibimbing di Lab Dinamika Struktur" data-i18n-en="Students Mentored in Dynamics Lab">Mahasiswa Dibimbing di Lab Dinamika Struktur</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRIPLE-CROWN INTERACTIVE LAB & SIMULATION WORKBENCH -->
+    <section class="lab-section" id="laboratorium-interaktif">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n-id="Laboratorium Rekayasa Digital" data-i18n-en="Digital Engineering Lab">Laboratorium Rekayasa Digital</span>
+          <h2 class="section-title" data-i18n-id="Laboratorium Interaktif & Simulasi Rekayasa" data-i18n-en="Interactive Engineering Lab & Simulations">Laboratorium Interaktif &amp; Simulasi Rekayasa</h2>
+          <p class="section-desc" data-i18n-id="Eksplorasi pembuktian teknis: slider komparasi multi-state CAD ke FEA dan Purwarupa Nyata, kalkulator simulasi aerodinamika & getaran real-time, serta komponen mekanik 3D interaktif WebGL." data-i18n-en="Interactive technical verification: multi-state comparison slider (CAD to FEA and Physical Testing), live aerodynamic & vibration formula simulators, and interactive 3D WebGL component inspection.">
+            Eksplorasi pembuktian teknis: slider komparasi multi-state CAD ke FEA dan Purwarupa Nyata, kalkulator simulasi aerodinamika &amp; getaran real-time, serta komponen mekanik 3D interaktif WebGL.
+          </p>
+        </div>
+
+        <!-- Master Workbench Tab Bar -->
+        <div class="lab-tab-bar">
+          <button class="lab-tab-btn active" data-lab-target="compare-panel">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="3" x2="12" y2="21"></line></svg>
+            <span data-i18n-id="1. Compare Slider (CAD vs FEA vs Real)" data-i18n-en="1. Compare Slider (CAD vs FEA vs Real)">1. Compare Slider (CAD vs FEA vs Real)</span>
+          </button>
+
+          <button class="lab-tab-btn" data-lab-target="calc-panel">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+            <span data-i18n-id="2. Live Engineering Calculator" data-i18n-en="2. Live Engineering Calculator">2. Live Engineering Calculator</span>
+          </button>
+
+          <button class="lab-tab-btn" data-lab-target="three-panel">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            <span data-i18n-id="3. 3D CAD Component Viewer (WebGL)" data-i18n-en="3. 3D CAD Component Viewer (WebGL)">3. 3D CAD Component Viewer (WebGL)</span>
+          </button>
+        </div>
+
+        <!-- TAB PANEL 1: MULTI-STATE COMPARE SLIDER -->
+        <div class="lab-panel active" id="compare-panel">
+          <div class="compare-container-card">
+            <!-- Project sub-pills -->
+            <div class="compare-pills-bar">
+              <button class="compare-pill-btn active" data-compare="uav">✈️ Sayap UAV (CAD 3D vs MSC Nastran SOL 103)</button>
+              <button class="compare-pill-btn" data-compare="catamaran">⛵ Kapal RSTA A-1 (CAD 3D vs CFD Hambatan Gelombang)</button>
+              <button class="compare-pill-btn" data-compare="bracket">⚙️ Link Joint (Gambar ISO 2D vs FEA Von Mises)</button>
+            </div>
+
+            <!-- Viewport Slider -->
+            <div class="compare-viewport" id="compare-viewport">
+              <img src="assets/projects/project_1_frf_comparison.png" alt="Simulasi MSC Nastran FEA" class="compare-img-before" id="compare-img-right">
+              
+              <div class="compare-after-wrapper" id="compare-after-wrapper">
+                <img src="assets/projects/project_1_uav_wing.png" alt="Model CAD 3D Sayap UAV" class="compare-img-after" id="compare-img-left">
+              </div>
+
+              <div class="compare-slider-divider" id="compare-slider-divider">
+                <div class="compare-handle-button" id="compare-handle-btn">◂ ▸</div>
+              </div>
+
+              <div class="compare-badge-left" id="compare-badge-left">CAD 3D SAYAP &amp; RUSUK SPAR</div>
+              <div class="compare-badge-right" id="compare-badge-right">SIMULASI MSC NASTRAN SOL 103</div>
+            </div>
+
+            <!-- Drag Slider Range bar for accessibility -->
+            <input type="range" min="0" max="100" value="50" class="compare-range-input" id="compare-range-input" aria-label="Geser Perbandingan Desain">
+
+            <!-- Caption Bar -->
+            <div class="compare-caption-bar">
+              <div class="compare-desc-text" id="compare-desc-text">
+                <strong>Studi Dinamika Sayap UAV:</strong> Perbandingan antara perancangan geometri rusuk-spar Autodesk Inventor dan validasi respon frekuensi (FRF) MSC Nastran SOL 111 vs eksperimen bump test hammer UNAND (Error serendah 0.30%).
+              </div>
+              <button class="btn-secondary" id="compare-inspect-btn" onclick="openProjectModal('uav-wing-modal')">
+                <span>Inspeksi Laporan Proyek</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB PANEL 2: LIVE ENGINEERING CALCULATOR SIMULATORS -->
+        <div class="lab-panel" id="calc-panel">
+          <div class="calc-grid">
+            
+            <!-- Calculator 1: N219 Aerodynamic Dynamic Pressure & Safety Factor -->
+            <div class="calc-card">
+              <div class="calc-header">
+                <span class="calc-tag">Riset BRIN ILST • Aerodinamika Pesawat</span>
+                <h3 class="calc-title">Kalkulator Tekanan Dinamis &amp; Safety Factor Sayap N219</h3>
+                <p style="font-size: 0.86rem; color: var(--text-muted);">
+                  Simulasikan pembebanan aerodinamika terowongan angin subsonik ILST (kecepatan hingga 120 m/s) dan periksa faktor keamanan struktur sayap.
+                </p>
+              </div>
+
+              <div class="calc-formula-box">
+                Rumus Dinamis: q = ½ · ρ · V² &nbsp;|&nbsp; SF = σ_yield / σ_normal
+              </div>
+
+              <!-- Input: Kecepatan Aliran V -->
+              <div class="calc-slider-group">
+                <div class="calc-slider-label">
+                  <span>Kecepatan Aliran Udara (V):</span>
+                  <span class="calc-slider-val" id="val-calc-speed">80 m/s (288 km/h)</span>
+                </div>
+                <input type="range" min="20" max="120" step="5" value="80" class="calc-slider-range" id="input-calc-speed">
+              </div>
+
+              <!-- Input: Densitas Udara rho -->
+              <div class="calc-slider-group">
+                <div class="calc-slider-label">
+                  <span>Densitas Udara (ρ):</span>
+                  <span class="calc-slider-val" id="val-calc-density">1.225 kg/m³ (Sea Level)</span>
+                </div>
+                <input type="range" min="1.100" max="1.300" step="0.025" value="1.225" class="calc-slider-range" id="input-calc-density">
+              </div>
+
+              <!-- Input: Kondisi Beban -->
+              <div class="calc-slider-group">
+                <div class="calc-slider-label">
+                  <span>Kondisi Pembebanan:</span>
+                  <span class="calc-slider-val" id="val-calc-condition">Blade-Off (Kondisi Ekstrem)</span>
+                </div>
+                <select id="input-calc-condition" class="form-input" style="padding: 8px 12px; font-size: 0.86rem;">
+                  <option value="blade-off" selected>Kondisi Ekstrem (Blade-Off @ 70mm CG)</option>
+                  <option value="normal">Kondisi Normal Operasi (Strut Normal)</option>
+                  <option value="midspan">Midspan Stasiun Sayap (340.75 mm dari CG)</option>
+                </select>
+              </div>
+
+              <!-- Output Metrics -->
+              <div class="calc-results-wrap">
+                <div class="calc-result-metrics">
+                  <div class="calc-metric-box">
+                    <div class="label">Tekanan Dinamis (q)</div>
+                    <div class="val" id="calc-out-q">3,920 Pa</div>
+                  </div>
+                  <div class="calc-metric-box">
+                    <div class="label">Tegangan Normal (σ)</div>
+                    <div class="val" id="calc-out-stress">127.06 MPa</div>
+                  </div>
+                </div>
+
+                <div class="calc-safety-badge safe" id="calc-out-badge">
+                  <span>✅ SAFETY FACTOR: 3.15 • LOLOS SERTIFIKASI UJI ILST (SF &gt; 2.0)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Calculator 2: UAV Wing Natural Frequency Estimator (SOL 103) -->
+            <div class="calc-card">
+              <div class="calc-header">
+                <span class="calc-tag">Riset LDS UNAND • Dinamika Resonansi Sayap</span>
+                <h3 class="calc-title">Estimator Frekuensi Pribadi Sayap UAV (SOL 103)</h3>
+                <p style="font-size: 0.86rem; color: var(--text-muted);">
+                  Perkirakan frekuensi natural dan hindari flutter getaran fluida dengan memvariasikan letak spar terhadap Center of Gravity (CG).
+                </p>
+              </div>
+
+              <div class="calc-formula-box">
+                Model Analitis: f_n = (λ_n² / 2πL²) · √(EI / ρA)
+              </div>
+
+              <!-- Input: Letak Spar -->
+              <div class="calc-slider-group">
+                <div class="calc-slider-label">
+                  <span>Posisi Spar terhadap CG:</span>
+                  <span class="calc-slider-val" id="val-calc-spar">45 mm (Posisi Optimal Skripsi)</span>
+                </div>
+                <input type="range" min="15" max="45" step="10" value="45" class="calc-slider-range" id="input-calc-spar">
+              </div>
+
+              <!-- Input: Material Spar -->
+              <div class="calc-slider-group">
+                <div class="calc-slider-label">
+                  <span>Material Spar Tabung:</span>
+                  <span class="calc-slider-val" id="val-calc-mat">Carbon Fiber Composite (E = 135 GPa)</span>
+                </div>
+                <select id="input-calc-mat" class="form-input" style="padding: 8px 12px; font-size: 0.86rem;">
+                  <option value="carbon" selected>Carbon Fiber Composite (Kekakuan Tinggi)</option>
+                  <option value="al6061">Aluminium 6061-T6 (E = 68.9 GPa)</option>
+                  <option value="steel">Structural Steel Tube (E = 200 GPa)</option>
+                </select>
+              </div>
+
+              <!-- Output Metrics -->
+              <div class="calc-results-wrap">
+                <div class="calc-result-metrics">
+                  <div class="calc-metric-box">
+                    <div class="label">Normal Mode 1 (Bending)</div>
+                    <div class="val" id="calc-out-mode1">16.5 Hz</div>
+                  </div>
+                  <div class="calc-metric-box">
+                    <div class="label">Normal Mode 2 (Torsion)</div>
+                    <div class="val" id="calc-out-mode2">53.3 Hz</div>
+                  </div>
+                </div>
+
+                <div class="calc-safety-badge safe" id="calc-out-uav-badge">
+                  <span>🎯 KORELASI TINGGI: ERROR SIMULASI VS BUMP TEST HANYA 0.38%</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- TAB PANEL 3: 3D CAD COMPONENT VIEWER (WEBGL) -->
+        <div class="lab-panel" id="three-panel">
+          <div class="three-card-container">
+            <div class="three-canvas-wrap" id="three-canvas-wrap">
+              <!-- Three.js Canvas injected via JS -->
+              
+              <!-- Floating Controls Overlay -->
+              <div class="three-controls-overlay">
+                <div class="three-btn-group">
+                  <button class="three-tool-btn active" id="btn-shade-metallic">🔩 Shaded Metallic</button>
+                  <button class="three-tool-btn" id="btn-shade-wire">📐 CAD Wireframe</button>
+                  <button class="three-tool-btn" id="btn-shade-fea">🌈 FEA Stress Gradient</button>
+                </div>
+
+                <div class="three-btn-group">
+                  <button class="three-tool-btn" id="btn-three-autorotate">🔁 Auto-Rotate: ON</button>
+                  <button class="three-tool-btn" id="btn-three-reset">🎯 Reset View</button>
+                </div>
+
+                <div class="three-dim-pill">
+                  📐 ASSEMBLY: X: 450.0 mm | Y: 120.0 mm | Z: 85.0 mm • AL 6061-T6
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom info bar -->
+            <div class="three-info-bar">
+              <div>
+                <strong style="color: var(--text-main);">Komponen: Parametric Wing Spar &amp; Rib Assembly (UAV Fixed Wing)</strong>
+                <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                  Geometri CAD presisi dibuat berdasarkan spesifikasi sayap Skywalker di Laboratorium Dinamika Struktur UNAND.
+                </div>
+              </div>
+              <div class="three-hint">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m10 15 5-3-5-3v6z"></path></svg>
+                <span>Putar (Klik-kiri drag) • Zoom (Scroll) • Geser (Klik-kanan drag)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT ME & ACADEMIC BACKGROUND -->
+    <section class="section" id="tentang">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n-id="Profil Profesional" data-i18n-en="Professional Profile">Profil Profesional</span>
+          <h2 class="section-title" data-i18n-id="Tentang Syofyan Alrisandi" data-i18n-en="About Syofyan Alrisandi">Tentang Syofyan Alrisandi</h2>
+          <p class="section-desc" data-i18n-id="Kombinasi kuat antara landasan teori rekayasa mekanika, keahlian komputasi simulasi (CAE/FEA), dan kemampuan manufaktur prototipe lapangan." data-i18n-en="A strong synthesis of fundamental mechanical engineering principles, computational simulation mastery (CAE/FEA), and hands-on prototyping fabrication.">
+            Kombinasi kuat antara landasan teori rekayasa mekanika, keahlian komputasi simulasi (CAE/FEA), dan kemampuan manufaktur prototipe lapangan.
+          </p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 36px; align-items: start;">
+          
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 32px; backdrop-filter: blur(12px);">
+            <h3 style="font-size: 1.35rem; font-weight: 700; color: var(--text-main); margin-bottom: 16px;" data-i18n-id="Dedikasi pada Presisi & Optimasi Rekayasa" data-i18n-en="Commitment to Precision & Engineering Optimization">
+              Dedikasi pada Presisi & Optimasi Rekayasa
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.96rem; line-height: 1.7; margin-bottom: 16px;" data-i18n-id="Saya memiliki pemahaman mendalam tentang prinsip-prinsip teknik mesin, khususnya di bidang desain mekanikal dan rekayasa optimasi struktur. Pengalaman saya terentang mulai dari pemodelan CAD parametrik, analisis getaran respon frekuensi (FRF), perhitungan faktor keamanan aerodinamika pesawat di terowongan angin BRIN, hingga desain mekanikal mesin agro-industri dan kapal otonom." data-i18n-en="I possess an in-depth understanding of mechanical engineering principles, specializing in mechanical design and structural optimization engineering. My experience spans parametric CAD modeling, frequency response vibration analysis (FRF), wind tunnel aerodynamic safety factor validation at BRIN, to agro-industrial machinery design and autonomous vessels.">
+              Saya memiliki pemahaman mendalam tentang prinsip-prinsip teknik mesin, khususnya di bidang desain mekanikal dan rekayasa optimasi struktur. Pengalaman saya terentang mulai dari pemodelan CAD parametrik, analisis getaran respon frekuensi (FRF), perhitungan faktor keamanan aerodinamika pesawat di terowongan angin BRIN, hingga desain mekanikal mesin agro-industri dan kapal otonom.
+            </p>
+            <p style="color: var(--text-muted); font-size: 0.96rem; line-height: 1.7;" data-i18n-id="Sebagai mantan Asisten Laboratorium Dinamika Struktur Departemen Teknik Mesin Universitas Andalas, saya membimbing 153 mahasiswa dalam mekanika kekuatan material, dinamika partikel, getaran mekanis, dan statika struktur, berhasil meningkatkan tingkat kelulusan dan keberhasilan tugas sebesar 45% melalui metode penyelesaian masalah teknis yang sistematis." data-i18n-en="As a former Assistant at the Structural Dynamics Laboratory, Department of Mechanical Engineering, Andalas University, I mentored 153 students in mechanics of materials, particle dynamics, mechanical vibrations, and statics, increasing student exam and coursework success by 45% through systematic technical problem-solving.">
+              Sebagai mantan Asisten Laboratorium Dinamika Struktur Departemen Teknik Mesin Universitas Andalas, saya membimbing 153 mahasiswa dalam mekanika kekuatan material, dinamika partikel, getaran mekanis, dan statika struktur, berhasil meningkatkan tingkat kelulusan dan keberhasilan tugas sebesar 45% melalui metode penyelesaian masalah teknis yang sistematis.
+            </p>
+          </div>
+
+          <!-- Academic & References Card -->
+          <div style="background: var(--bg-card); border: 1px solid var(--border-card); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-card);">
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-cyan); font-weight: 700; text-transform: uppercase; margin-bottom: 12px;">Pendidikan &amp; Referensi Dosen</div>
+            
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
+              <img src="assets/syofyan_headshot.jpg" alt="Syofyan Alrisandi, S.T." style="width: 60px; height: 60px; border-radius: 14px; object-fit: cover; border: 2px solid var(--accent-cyan); box-shadow: var(--shadow-sm);">
+              <div>
+                <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-main); line-height: 1.2;">Universitas Andalas (UNAND)</h3>
+                <p style="font-size: 0.88rem; color: var(--accent-cyan); font-weight: 700; font-family: var(--font-mono);">S1 Teknik Mesin • Lulus 2024 (IPK 3.61 / 4.00)</p>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; margin-bottom: 16px;">
+              <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); margin-bottom: 6px;">Mata Kuliah Relevan:</div>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span class="skill-pill">Technical Drawing</span>
+                <span class="skill-pill">Mechanics of Materials</span>
+                <span class="skill-pill">Mechanical Vibration</span>
+                <span class="skill-pill">Vibration Engineering</span>
+                <span class="skill-pill">Machine Element</span>
+                <span class="skill-pill">Kinematic & Dynamic</span>
+                <span class="skill-pill">Industrial Metrology</span>
+                <span class="skill-pill">Manufacturing</span>
+                <span class="skill-pill">Sound Control</span>
+                <span class="skill-pill">MEMS</span>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px;">
+              <div style="font-size: 0.82rem; font-weight: 600; color: var(--accent-cyan); margin-bottom: 6px;">Referensi Akademik Dosen:</div>
+              <ul style="list-style: none; font-size: 0.84rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 6px;">
+                <li><strong>Prof. Dr. Eng, Lovely Son</strong> - Guru Besar Teknik Mesin UNAND (+6281213552846)</li>
+                <li><strong>Prof. Dr. -Ing, Mulyadi Bur</strong> - Guru Besar Teknik Mesin UNAND (+62811661183)</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE TECHNICAL COMPETENCIES -->
+    <section class="section" id="keahlian" style="background: rgba(255, 255, 255, 0.01);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n-id="Keahlian Teknik" data-i18n-en="Technical Competencies">Keahlian Teknik</span>
+          <h2 class="section-title" data-i18n-id="Pilar Rekayasa & Keahlian Perangkat Lunak" data-i18n-en="Engineering Pillars & Toolsets">Pilar Rekayasa &amp; Keahlian Perangkat Lunak</h2>
+          <p class="section-desc" data-i18n-id="Penguasaan perangkat lunak komersial CAD/CAE standar industri dan metode pengujian eksperimental." data-i18n-en="Industry-standard commercial CAD/CAE toolset proficiency paired with rigorous experimental testing methods.">
+            Penguasaan perangkat lunak komersial CAD/CAE standar industri dan metode pengujian eksperimental.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          
+          <!-- Pillar 1: CAD & 3D Modeling -->
+          <div class="skill-category-card">
+            <div class="skill-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </div>
+            <h3 class="skill-card-title">CAD &amp; 3D Modeling</h3>
+            <p class="skill-card-desc">Desain parametrik 3D part & assembly kompleks, gambar kerja 2D proyeksi ortogonal standar ISO, dan toleransi geometri.</p>
+            <div class="skill-tags-list">
+              <span class="skill-pill advanced">Autodesk Inventor (Advanced)</span>
+              <span class="skill-pill">SolidWorks (Basic)</span>
+              <span class="skill-pill">AutoCAD (Basic)</span>
+              <span class="skill-pill">Bill of Materials (BOM)</span>
+              <span class="skill-pill">Assembly Modeling</span>
+            </div>
+          </div>
+
+          <!-- Pillar 2: FEA & Dynamic Simulation -->
+          <div class="skill-category-card">
+            <div class="skill-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
+            <h3 class="skill-card-title">FEA &amp; Simulasi Getaran</h3>
+            <p class="skill-card-desc">Analisis elemen hingga untuk tegangan, deformasi, frekuensi pribadi, respon getaran struktur, dan optimasi berat.</p>
+            <div class="skill-tags-list">
+              <span class="skill-pill advanced">MSC Nastran / Patran</span>
+              <span class="skill-pill">SOL 103 (Normal Mode)</span>
+              <span class="skill-pill">SOL 111 (FRF Response)</span>
+              <span class="skill-pill">MATLAB Data Validation</span>
+              <span class="skill-pill">Stress & Safety Factor</span>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Aerodynamics & Testing -->
+          <div class="skill-category-card">
+            <div class="skill-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></svg>
+            </div>
+            <h3 class="skill-card-title">Aero &amp; Uji Terowongan Angin</h3>
+            <p class="skill-card-desc">Pengujian aerodinamika fluida terowongan angin subsonik di ILST BRIN dan uji modal analisis getaran struktur.</p>
+            <div class="skill-tags-list">
+              <span class="skill-pill advanced">Indonesian Low Speed Tunnel (ILST)</span>
+              <span class="skill-pill">Modal Bump Testing</span>
+              <span class="skill-pill">Impact Modal Hammer</span>
+              <span class="skill-pill">Fluid Characteristics</span>
+              <span class="skill-pill">Aeroelasticity</span>
+            </div>
+          </div>
+
+          <!-- Pillar 4: Prototyping & Fabrication -->
+          <div class="skill-category-card">
+            <div class="skill-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
+            <h3 class="skill-card-title">Fabrikasi &amp; Otonom</h3>
+            <p class="skill-card-desc">Manufaktur komposit serat, permesinan bubut/frais, pengelasan, dan integrasi avionik otonom berbasis Pixhawk &amp; IoT.</p>
+            <div class="skill-tags-list">
+              <span class="skill-pill">Fiberglass &amp; Carbon Layup</span>
+              <span class="skill-pill">Machining &amp; Welding</span>
+              <span class="skill-pill">Pixhawk / ArduPilot</span>
+              <span class="skill-pill">Arduino &amp; Sensors</span>
+              <span class="skill-pill">Rapid Prototyping</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED ENGINEERING PROJECTS -->
+    <section class="section" id="proyek">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n-id="Katalog Portofolio" data-i18n-en="Portfolio Showcase">Katalog Portofolio</span>
+          <h2 class="section-title" data-i18n-id="Proyek Rekayasa & Hasil Penelitian" data-i18n-en="Engineering Projects & Research">Proyek Rekayasa &amp; Hasil Penelitian</h2>
+          <p class="section-desc" data-i18n-id="Eksplorasi karya rancang bangun mekanika, simulasi aeroelastisitas, pengujian struktur di BRIN, dan purwarupa sistem otonom." data-i18n-en="Explore mechanical design developments, aeroelastic simulations, structural tests at BRIN, and autonomous systems.">
+            Eksplorasi karya rancang bangun mekanika, simulasi aeroelastisitas, pengujian struktur di BRIN, dan purwarupa sistem otonom.
+          </p>
+        </div>
+
+        <!-- Spotlight Feature: Interactive CAD & FEA Workstation Viewport -->
+        <div style="max-width: 960px; margin: 0 auto 44px;">
+          <div class="hero-workstation-card">
+            <!-- Interactive Switcher Tabs -->
+            <div class="workstation-tabs">
+              <button class="ws-tab-btn active" data-ws="n219">🌪️ BRIN N219</button>
+              <button class="ws-tab-btn" data-ws="uav">✈️ Sayap UAV</button>
+              <button class="ws-tab-btn" data-ws="atsv">⛵ Catamaran</button>
+              <button class="ws-tab-btn" data-ws="pellet">⚙️ Mesin Pelet</button>
+            </div>
+
+            <!-- Preview Frame -->
+            <div class="ws-preview-frame" onclick="openProjectModal('n219-amphibious-brin')">
+              <img src="assets/projects/project_2_n219_amphibious.png" alt="Engineering Workstation Preview" id="ws-display-img">
+              <div class="ws-floating-overlay" id="ws-display-badge">✦ SF &gt; 3.09 (100% Aman)</div>
+              <div class="ws-bottom-bar">
+                <div>
+                  <div class="ws-title" id="ws-display-title">Pesawat Amfibi N219 Skala 1:6.3 (BRIN LA3)</div>
+                  <div class="ws-subtitle" id="ws-display-sub">Indonesian Low Speed Tunnel (ILST) Serpong</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Specs Grid -->
+            <div class="ws-spec-grid" id="ws-display-specs">
+              <div class="ws-spec-box">
+                <div class="label">Tekanan Dinamis</div>
+                <div class="value">4,000 N/mm²</div>
+              </div>
+              <div class="ws-spec-box">
+                <div class="label">Kecepatan Uji (V)</div>
+                <div class="value">80 m/s (288 km/h)</div>
+              </div>
+              <div class="ws-spec-box">
+                <div class="label">Safety Factor</div>
+                <div class="value">3.09 s/d 20.70</div>
+              </div>
+              <div class="ws-spec-box">
+                <div class="label">Uji Terowongan</div>
+                <div class="value" style="color: var(--accent-emerald);">100% Safe Certified</div>
+              </div>
+            </div>
+
+            <button class="ws-btn-inspect" id="ws-btn-inspect-action" onclick="openProjectModal('n219-amphibious-brin')">
+              <span>Inspeksi Laporan Proyek Ini</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="projects-filter-bar" id="projects-filter-bar">
+          <button class="filter-btn active" data-filter="all" data-i18n-id="Semua Proyek (8)" data-i18n-en="All Projects (8)">Semua Proyek (8)</button>
+          <button class="filter-btn" data-filter="aerospace" data-i18n-id="Aerospace & UAV" data-i18n-en="Aerospace & UAV">Aerospace &amp; UAV</button>
+          <button class="filter-btn" data-filter="structural" data-i18n-id="Struktur & FEA" data-i18n-en="Structural & FEA">Struktur &amp; FEA</button>
+          <button class="filter-btn" data-filter="marine" data-i18n-id="Kapal Otonom" data-i18n-en="Autonomous Marine">Kapal Otonom</button>
+          <button class="filter-btn" data-filter="machinery" data-i18n-id="Mesin Industri" data-i18n-en="Industrial Machinery">Mesin Industri</button>
+          <button class="filter-btn" data-filter="iot" data-i18n-id="IoT & Mekatronika" data-i18n-en="IoT & Mechatronics">IoT &amp; Mekatronika</button>
+        </div>
+
+        <!-- Projects Grid Container (Populated dynamically) -->
+        <div class="projects-grid" id="projects-grid-container">
+          <!-- Populated via portfolio.js -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE & LEADERSHIP TIMELINE -->
+    <section class="section" id="pengalaman" style="background: rgba(255, 255, 255, 0.01);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n-id="Rekam Jejak" data-i18n-en="Track Record">Rekam Jejak</span>
+          <h2 class="section-title" data-i18n-id="Pengalaman Kerja & Organisasi" data-i18n-en="Work & Organizational Experience">Pengalaman Kerja & Organisasi</h2>
+          <p class="section-desc" data-i18n-id="Pengalaman riset di lembaga penelitian nasional BRIN, asisten laboratorium universitas, serta kepemimpinan divisi desain wahana otonom." data-i18n-en="Research experience at the national BRIN institute, university lab assistantship, and autonomous vehicle division leadership.">
+            Pengalaman riset di lembaga penelitian nasional BRIN, asisten laboratorium universitas, serta kepemimpinan divisi desain wahana otonom.
+          </p>
+        </div>
+
+        <div class="timeline-wrap">
+          
+          <!-- Experience 1: BRIN LA3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Intern in Aerodynamics, Aeroelastics, and Aeroacoustics Laboratory (LA3)</h3>
+                  <div class="timeline-company">Badan Riset dan Inovasi Nasional (BRIN) - Serpong, Indonesia</div>
+                </div>
+                <div class="timeline-date">Jan 2023 - Feb 2023</div>
+              </div>
+              <p class="timeline-desc">
+                Berpartisipasi aktif dalam riset dan pengembangan (R&amp;D) wahana tanpa awak (UAV) dan pesawat nasional di fasilitas uji terowongan angin subsonik nasional (Indonesian Low Speed Tunnel - ILST).
+              </p>
+              <ul class="timeline-bullets">
+                <li>Melakukan analisis konstruksi UAV dengan aplikasi FEA dan analisis karakteristik fluida aerodinamika di terowongan angin ILST.</li>
+                <li>Menganalisis kekuatan konstruksi pesawat amfibi 2-mesin 19-penumpang N219 Amphibious untuk komponen sayap, konektor lambung (floaters), dan badan pesawat dengan tingkat faktor keamanan (safety factor) di atas 2.0 sehingga prototipe 100% aman selama kampanye pengujian.</li>
+                <li>Terlibat langsung dalam pelaksanaan uji coba aerodinamika model pesawat amfibi N219 di terowongan angin ILST.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 2: LDS UNAND Assistant -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Asisten Laboratorium Dinamika Struktur (LDS)</h3>
+                  <div class="timeline-company">Departemen Teknik Mesin, Universitas Andalas</div>
+                </div>
+                <div class="timeline-date">Jan 2022 - Agu 2024</div>
+              </div>
+              <p class="timeline-desc">
+                Bertanggung jawab penuh atas operasional peralatan uji laboratorium dinamika struktur serta membimbing mahasiswa sarjana dalam pemahaman konsep analitis mekanika.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Memberikan asistensi teknis kepada 153 mahasiswa dalam tugas akademik mekanika kekuatan material, dinamika partikel, getaran mekanis, dan statika struktur.</li>
+                <li>Menyusun solusi soal dan pendampingan problem solving yang meningkatkan tingkat kelulusan dan nilai ujian mahasiswa sebesar 45%.</li>
+                <li>Bertanggung jawab 100% dalam pengoperasian dan pemeliharaan alat-alat laboratorium untuk pengujian Tugas Akhir.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 3: AFRG Design Coordinator -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Koordinator Desain &amp; Desainer Sayap Racing Plane</h3>
+                  <div class="timeline-company">Andalas Flying Robot Generation (AFRG) - Universitas Andalas</div>
+                </div>
+                <div class="timeline-date">Jun 2021 - Jan 2023</div>
+              </div>
+              <p class="timeline-desc">
+                Memimpin divisi rancang bangun pesawat UAV untuk kompetisi nasional Kontes Robot Terbang Indonesia (KRTI Puspresnas).
+              </p>
+              <ul class="timeline-bullets">
+                <li>Mengkoordinasikan 6 anggota desainer mencapai tingkat keberhasilan riset 90% pada 6 divisi misi UAV (Racing Plane, Fixed Wing Mapping, VTOL, Propeller, Airframe, dan Prime Mover).</li>
+                <li>Merancang wahana Racing Plane berkecepatan 150 km/jam berfokus pada aerodinamika dan stabilitas tinggi.</li>
+                <li>Merancang peluncur pesawat (spring aircraft launcher) mekanis dengan tingkat keberhasilan 90%.</li>
+                <li>Mengontrol kualitas implementasi desain hingga toleransi presisi mencapai 95%.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 4: ANRD ATSV Ship -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Divisi Desain &amp; Produksi Kapal Otonom ATSV</h3>
+                  <div class="timeline-company">Andalas Naval Research Development (ANRD) - Universitas Andalas</div>
+                </div>
+                <div class="timeline-date">Apr 2023 - Des 2023</div>
+              </div>
+              <p class="timeline-desc">
+                Mengembangkan purwarupa Autonomous Tourism Surface Vessel (ATSV) untuk Kontes Kapal Cepat Tak Berawak Nasional (KKCTBN) di Universitas Indonesia.
+              </p>
+              <ul class="timeline-bullets">
+                <li>Merancang lambung ganda Catamaran komposit fiberglass yang efisien dan stabil bermanuver.</li>
+                <li>Memproduksi dan melakukan quality control prototipe dengan akurasi integrasi sistem otonom mencapai 95%.</li>
+                <li>Melakukan simulasi hidrodinamika resistensi gelombang dan pengujian manuver lapangan dengan draft sarat air hanya 6 cm.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Experience 5: HMM FT-UNAND -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">Staf Divisi Riset dan Acara</h3>
+                  <div class="timeline-company">Himpunan Mahasiswa Mesin (HMM FT-UNAND)</div>
+                </div>
+                <div class="timeline-date">Mei 2021 - Agu 2024</div>
+              </div>
+              <ul class="timeline-bullets">
+                <li>Tim penyusun 60 soal Olimpiade Matematika dan solusi pada Mechanical Creativity Competition 2021.</li>
+                <li>Juri Lomba Roket Air Mechanical Creativity Competition 2023 dengan 42 peserta.</li>
+                <li>Berkontribusi aktif dalam pengembangan unit kegiatan mahasiswa bidang Aero-Hydro Modeling.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HONORS & COMPETITIONS -->
+    <section class="section" id="prestasi">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n-id="Penghargaan" data-i18n-en="Honors & Awards">Penghargaan</span>
+          <h2 class="section-title" data-i18n-id="Prestasi & Juara Kompetisi Rekayasa" data-i18n-en="Competition Honors & Achievements">Prestasi &amp; Juara Kompetisi Rekayasa</h2>
+          <p class="section-desc" data-i18n-id="Rekam jejak kejuaraan dan pengakuan kompetisi desain alat, robotika terbang, kapal cepat, dan karya inovasi tingkat nasional & internasional." data-i18n-en="National & international engineering design competitions, robotics contests, fast naval vessels, and student innovation awards.">
+            Rekam jejak kejuaraan dan pengakuan kompetisi desain alat, robotika terbang, kapal cepat, dan karya inovasi tingkat nasional & internasional.
+          </p>
+        </div>
+
+        <div class="awards-grid">
+          
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+            <div>
+              <div class="award-year">2023 • JUARA 3</div>
+              <h3 class="award-title">Lomba Desain Alat Nasional</h3>
+              <p class="award-org">Tema: "Sustainable Wastewater Technology" • Jurusan Teknik Lingkungan UNAND</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <div>
+              <div class="award-year">2023 • FINALIS NASIONAL</div>
+              <h3 class="award-title">Kontes Kapal Cepat Tak Berawak Nasional (KKCTBN)</h3>
+              <p class="award-org">Divisi ATSV Prototype Manufacturing &amp; Performance • Puspresnas di Universitas Indonesia</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <div>
+              <div class="award-year">2023 • PEMENANG PENDANAAN</div>
+              <h3 class="award-title">Program Kreativitas Mahasiswa Karya Inovatif (PKM-KI)</h3>
+              <p class="award-org">Tim Hybrid Smart E-Ovitrap • Didanai Kemendikbudristek di PIMNAS 2023</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+            <div>
+              <div class="award-year">2022 • JUARA 1</div>
+              <h3 class="award-title">National Energy Seminar Poster Competition</h3>
+              <p class="award-org">Serikat Pekerja Pertamina Unit Pemasaran III (SPP UPms III)</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+            <div>
+              <div class="award-year">2022 • JUARA 2</div>
+              <h3 class="award-title">Lomba Desain Alat Nasional</h3>
+              <p class="award-org">Tema: "Gen-Z Innovation: Clear Air Tech" • Teknik Lingkungan UNAND</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <div>
+              <div class="award-year">2021 • FINALIS NASIONAL</div>
+              <h3 class="award-title">Kontes Robot Terbang Indonesia (KRTI)</h3>
+              <p class="award-org">Divisi Racing Plane • Pusat Prestasi Nasional (Puspresnas)</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+            <div>
+              <div class="award-year">2021 • JUARA 3</div>
+              <h3 class="award-title">Design Competition HMM FT-UNAND</h3>
+              <p class="award-org">Himpunan Mahasiswa Mesin Fakultas Teknik Universitas Andalas</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+            </div>
+            <div>
+              <div class="award-year">2020 • JUARA 2</div>
+              <h3 class="award-title">Hands-free Sanitizer Competition</h3>
+              <p class="award-org">Himpunan Mahasiswa Mesin FT-UNAND</p>
+            </div>
+          </div>
+
+          <div class="award-card">
+            <div class="award-icon-box">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+            <div>
+              <div class="award-year">2020 • FINALIS INTERNASIONAL</div>
+              <h3 class="award-title">Hands-free Sanitizer Mechanism Design Challenge</h3>
+              <p class="award-org">Institution of Engineers Malaysia (IEM)</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FULL 12-PAGE PDF DOCUMENT INTERACTIVE VIEWER -->
+    <section class="section" id="dokumen-portfolio">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n-id="Lembar Asli Portofolio" data-i18n-en="Original Portfolio Sheets">Lembar Asli Portofolio</span>
+          <h2 class="section-title" data-i18n-id="Penampil Dokumen PDF Interaktif (12 Halaman)" data-i18n-en="Interactive 12-Page PDF Document Viewer">Penampil Dokumen PDF Interaktif (12 Halaman)</h2>
+          <p class="section-desc" data-i18n-id="Jelajahi seluruh lembar dokumen asli CV & Portofolio lengkap dengan resolusi tinggi, atau unduh langsung file PDF resminya." data-i18n-en="Inspect every page of the original CV & Portfolio document in high resolution, or download the official PDF directly.">
+            Jelajahi seluruh lembar dokumen asli CV &amp; Portofolio lengkap dengan resolusi tinggi, atau unduh langsung file PDF resminya.
+          </p>
+        </div>
+
+        <div class="doc-viewer-card">
+          <!-- Header Bar with Page Title and Controls -->
+          <div class="doc-viewer-header">
+            <div class="doc-title-info">
+              <span class="doc-badge">PDF 12 PAGES</span>
+              <span class="doc-name" id="doc-current-title">CV Halaman 1: Profil, Pengalaman Kerja &amp; Pendidikan</span>
+            </div>
+
+            <div class="doc-viewer-controls">
+              <button class="btn-doc-nav" id="btn-doc-prev">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                <span data-i18n-id="Sebelumnya" data-i18n-en="Prev">Sebelumnya</span>
+              </button>
+
+              <span class="page-indicator" id="doc-page-indicator">1 / 12</span>
+
+              <button class="btn-doc-nav" id="btn-doc-next">
+                <span data-i18n-id="Berikutnya" data-i18n-en="Next">Berikutnya</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </button>
+
+              <a href="portfolio_syofyan_alrisandi.pdf" download="Portfolio_Syofyan_Alrisandi_ST.pdf" class="btn-primary" style="padding: 7px 16px; font-size: 0.82rem; margin-left: 10px;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Unduh PDF</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Document Viewport -->
+          <div class="doc-viewport">
+            <img src="assets/portfolio_pages/page_1.png" alt="Portfolio Document Page" class="doc-display-img" id="doc-display-img">
+          </div>
+
+          <!-- Thumbnail Strip at bottom -->
+          <div class="doc-thumb-strip" id="doc-thumb-strip">
+            <!-- Populated via portfolio.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section" id="kontak">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n-id="Hubungi Saya" data-i18n-en="Get In Touch">Hubungi Saya</span>
+          <h2 class="section-title" data-i18n-id="Mulai Kolaborasi & Rekrutmen" data-i18n-en="Let's Connect & Collaborate">Mulai Kolaborasi &amp; Rekrutmen</h2>
+          <p class="section-desc" data-i18n-id="Siap untuk berdiskusi seputar peluang kerja di bidang Teknik Mesin, FEA / Simulasi Struktur, Aerodinamika, atau Desain Rancang Bangun." data-i18n-en="Available for career opportunities in Mechanical Design, FEA / Structural Simulation, Aerodynamics, and Prototyping.">
+            Siap untuk berdiskusi seputar peluang kerja di bidang Teknik Mesin, FEA / Simulasi Struktur, Aerodinamika, atau Desain Rancang Bangun.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Details Card -->
+          <div class="contact-card">
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 24px;">Kontak Langsung</h3>
+
+            <div class="contact-item-row">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <div class="contact-label">Telepon / WhatsApp</div>
+                <div class="contact-value"><a href="tel:+6285365103947">+62 853 6510 3947</a></div>
+              </div>
+            </div>
+
+            <div class="contact-item-row">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              </div>
+              <div>
+                <div class="contact-label">Email Utama</div>
+                <div class="contact-value"><a href="mailto:syofyanalrisandi12@gmail.com">syofyanalrisandi12@gmail.com</a></div>
+              </div>
+            </div>
+
+            <div class="contact-item-row">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </div>
+              <div>
+                <div class="contact-label">LinkedIn Resmi</div>
+                <div class="contact-value"><a href="https://www.linkedin.com/in/syofyan-alrisandi-314381313/" target="_blank" rel="noopener noreferrer">linkedin.com/in/syofyan-alrisandi</a></div>
+              </div>
+            </div>
+
+            <div class="contact-item-row">
+              <div class="contact-icon-box">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </div>
+              <div>
+                <div class="contact-label">Domisili</div>
+                <div class="contact-value">Kota Padang, Sumatera Barat, Indonesia</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick WhatsApp Inquiry Form -->
+          <div class="contact-card">
+            <h3 style="font-size: 1.3rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px;">Kirim Pesan Langsung</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">Formulir ini akan langsung terhubung ke percakapan WhatsApp resmi saya.</p>
+
+            <form id="contact-form">
+              <div class="form-group">
+                <label class="form-label" for="form-name">Nama Lengkap</label>
+                <input type="text" id="form-name" class="form-input" placeholder="Masukkan nama Anda..." required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-company">Instansi / Perusahaan</label>
+                <input type="text" id="form-company" class="form-input" placeholder="Nama perusahaan atau universitas...">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-email">Alamat Email</label>
+                <input type="email" id="form-email" class="form-input" placeholder="email@perusahaan.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-message">Pesan / Penawaran Pekerjaan</label>
+                <textarea id="form-message" class="form-textarea" placeholder="Tuliskan pesan, pertanyaan proyek, atau peluang posisi..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                <span>Kirimkan Pesan via WhatsApp</span>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <img src="assets/syofyan_headshot.jpg" alt="Syofyan Alrisandi, S.T." style="width: 38px; height: 38px; border-radius: 10px; object-fit: cover; border: 2px solid var(--accent-cyan);">
+        <div>
+          <div style="font-weight: 700; color: var(--text-main);">Syofyan Alrisandi, S.T.</div>
+          <div style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-dim);">Bachelor of Mechanical Engineering • Universitas Andalas</div>
+        </div>
+      </div>
+
+      <div style="font-size: 0.85rem; color: var(--text-dim); text-align: right;">
+        &copy; 2024-2026 Syofyan Alrisandi. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/6285365103947?text=Halo%20Syofyan%20Alrisandi,%20saya%20melihat%20portofolio%20website%20Anda." target="_blank" rel="noopener noreferrer" class="floating-whatsapp" title="Hubungi via WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+  </a>
+
+  <!-- RECRUITER QUICK-SHEET DRAWER -->
+  <div class="recruiter-drawer-backdrop" id="recruiter-drawer-backdrop">
+    <div class="recruiter-drawer" id="recruiter-drawer">
+      <div class="recruiter-drawer-header">
+        <div>
+          <span class="recruiter-header-tag">Executive Recruiter Snapshot</span>
+          <h3 class="recruiter-header-title">Dossier Calon Karyawan</h3>
+        </div>
+        <button class="recruiter-close-btn" id="close-recruiter-drawer" aria-label="Tutup Dossier">&times;</button>
+      </div>
+
+      <div class="recruiter-drawer-body">
+        
+        <!-- Live Status Card -->
+        <div class="recruiter-status-card">
+          <div class="recruiter-status-pill">
+            <span class="recruiter-pulse"></span>
+            <span>AVAILABLE IMMEDIATELY • TERBUKA UNTUK KERJA</span>
+          </div>
+          <span style="font-size: 0.76rem; font-family: var(--font-mono); color: var(--accent-cyan);">Full-time / R&amp;D Contract</span>
+        </div>
+
+        <!-- Candidate Profile Summary -->
+        <div style="display: flex; align-items: center; gap: 16px; background: var(--bg-card); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+          <img src="assets/syofyan_headshot.jpg" alt="Syofyan Alrisandi, S.T." style="width: 70px; height: 70px; border-radius: 16px; object-fit: cover; border: 2px solid var(--accent-cyan);">
+          <div>
+            <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--text-main);">Syofyan Alrisandi, S.T.</h4>
+            <div style="font-size: 0.84rem; color: var(--accent-cyan); font-weight: 700; font-family: var(--font-mono);">S1 Teknik Mesin UNAND (IPK 3.61/4.00)</div>
+            <div style="font-size: 0.78rem; color: var(--text-dim); margin-top: 4px;">Peminatan: Mechanical Design, CAE/FEA, Aerodinamika &amp; Dinamika Struktur</div>
+          </div>
+        </div>
+
+        <!-- Quick Meta Grid -->
+        <div class="recruiter-quick-meta">
+          <div class="quick-meta-box">
+            <div class="quick-meta-label">Kesiapan Relokasi</div>
+            <div class="quick-meta-val">Seluruh Indonesia &amp; Global</div>
+          </div>
+          <div class="quick-meta-box">
+            <div class="quick-meta-label">Domisili Asal</div>
+            <div class="quick-meta-val">Kota Padang, Sumatera Barat</div>
+          </div>
+          <div class="quick-meta-box">
+            <div class="quick-meta-label">Bahasa Kerja</div>
+            <div class="quick-meta-val">Indonesia (Native), English (Tech)</div>
+          </div>
+          <div class="quick-meta-box">
+            <div class="quick-meta-label">Jam Terbang CAD/CAE</div>
+            <div class="quick-meta-val">3,500+ Jam Modeling &amp; FEA</div>
+          </div>
+        </div>
+
+        <!-- 1-Click Copy & Outreach Actions -->
+        <div>
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; font-family: var(--font-mono); margin-bottom: 8px;">
+            Aksi Kontak &amp; Salin Cepat
+          </div>
+          <div class="recruiter-actions-row">
+            <button class="btn-copy-action" onclick="copyToClipboard('+6285365103947', 'Nomor WhatsApp')">
+              <span>📱 WhatsApp / Telepon: <strong>+62 853 6510 3947</strong></span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+
+            <button class="btn-copy-action" onclick="copyToClipboard('syofyanalrisandi12@gmail.com', 'Alamat Email')">
+              <span>✉️ Email Resmi: <strong>syofyanalrisandi12@gmail.com</strong></span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            </button>
+
+            <a href="portfolio_syofyan_alrisandi.pdf" download="Portfolio_Syofyan_Alrisandi_ST.pdf" class="btn-primary" style="justify-content: center; padding: 12px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>Unduh Dokumen Portofolio Lengkap (PDF 2.4 MB)</span>
+            </a>
+
+            <button class="btn-secondary" onclick="window.print()" style="justify-content: center; padding: 12px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              <span>Cetak / Simpan Ringkasan Resume (Ctrl + P)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Technical Competencies & Software Matrix -->
+        <div class="recruiter-skills-radar">
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; font-family: var(--font-mono); margin-bottom: 12px;">
+            Tingkat Kemahiran Perangkat Lunak Teknik
+          </div>
+
+          <div class="recruiter-skill-item">
+            <div class="recruiter-skill-info">
+              <span>Autodesk Inventor (Advanced Parametric 3D &amp; BOM)</span>
+              <span>95% • 4+ Tahun</span>
+            </div>
+            <div class="recruiter-skill-track"><div class="recruiter-skill-fill" style="width: 95%;"></div></div>
+          </div>
+
+          <div class="recruiter-skill-item">
+            <div class="recruiter-skill-info">
+              <span>MSC Nastran / Patran (SOL 103 Normal Mode &amp; SOL 111 FRF)</span>
+              <span>90% • 3+ Tahun</span>
+            </div>
+            <div class="recruiter-skill-track"><div class="recruiter-skill-fill" style="width: 90%;"></div></div>
+          </div>
+
+          <div class="recruiter-skill-item">
+            <div class="recruiter-skill-info">
+              <span>Uji Terowongan Angin Fluida (ILST BRIN Serpong)</span>
+              <span>88% • Lolos Sertifikasi</span>
+            </div>
+            <div class="recruiter-skill-track"><div class="recruiter-skill-fill" style="width: 88%;"></div></div>
+          </div>
+
+          <div class="recruiter-skill-item">
+            <div class="recruiter-skill-info">
+              <span>SolidWorks &amp; AutoCAD Mechanical</span>
+              <span>80% • 2+ Tahun</span>
+            </div>
+            <div class="recruiter-skill-track"><div class="recruiter-skill-fill" style="width: 80%;"></div></div>
+          </div>
+
+          <div class="recruiter-skill-item">
+            <div class="recruiter-skill-info">
+              <span>MATLAB &amp; Pemrosesan Data Eksperimental</span>
+              <span>85% • 3+ Tahun</span>
+            </div>
+            <div class="recruiter-skill-track"><div class="recruiter-skill-fill" style="width: 85%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Academic References & Endorsements -->
+        <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px;">
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase; font-family: var(--font-mono); margin-bottom: 10px;">
+            Verifikasi Referensi Dosen Akademik
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; color: var(--text-muted);">
+            <div style="background: var(--bg-card); padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <strong>Prof. Dr. Eng, Lovely Son</strong> — Guru Besar Teknik Mesin UNAND<br>
+              <span style="font-size: 0.8rem; color: var(--text-dim);">Kontak: +62 812 1355 2846 • Rekomendasi Dinamika Struktur &amp; Getaran</span>
+            </div>
+            <div style="background: var(--bg-card); padding: 12px 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+              <strong>Prof. Dr. -Ing, Mulyadi Bur</strong> — Guru Besar Teknik Mesin UNAND<br>
+              <span style="font-size: 0.8rem; color: var(--text-dim);">Kontak: +62 811 661 183 • Rekomendasi Mekanika Kekuatan &amp; Material</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-notification" id="toast-notify">Teks berhasil disalin ke clipboard!</div>
+
+  <!-- INTERACTIVE PROJECT DEEP-DIVE MODAL -->
+  <div class="modal-backdrop" id="project-modal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-cyan-light); font-weight: 700;">
+          LAPORAN TEKNIS LENGKAP • MECHANICAL ENGINEERING REPORT
+        </div>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Tutup Jendela Modal">
+          &times;
+        </button>
+      </div>
+      <div class="modal-body" id="modal-dynamic-content">
+        <!-- Injected via portfolio.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS: Three.js WebGL & Portfolio Interactivity -->
+  <script src="lib/three.min.js"></script>
+  <script src="lib/OrbitControls.js"></script>
+  <script src="portfolio.js"></script>
+</body>
+</html>
