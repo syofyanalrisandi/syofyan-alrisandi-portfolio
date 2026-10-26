@@ -1610,8 +1610,8 @@ function initNavScrollSpy() {
       const href = link.getAttribute("href");
       if (href === currentHref) {
         link.classList.add("active");
-        // Center the active pill smoothly on mobile horizontal bar
-        if (window.innerWidth <= 1040) {
+        // Center the active pill smoothly on tablet horizontal bar (grid on mobile <= 768)
+        if (window.innerWidth > 768 && window.innerWidth <= 1040) {
           link.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
         }
       } else {

@@ -2015,6 +2015,12 @@ button {
 }
 
 @media (max-width: 1040px) {
+  html {
+    scroll-padding-top: 125px;
+  }
+  section[id] {
+    scroll-margin-top: 125px;
+  }
   .navbar {
     height: auto !important;
     min-height: 96px;
@@ -2043,7 +2049,7 @@ button {
   .mobile-menu-toggle {
     display: none !important;
   }
-  /* The exact 8-item navigation bar requested by user: Always visible on mobile */
+  /* The exact 8-item navigation bar requested by user: Always visible on tablet */
   .navbar .nav-menu {
     order: 3;
     display: flex !important;
@@ -2096,14 +2102,27 @@ button {
 }
 
 /* ==========================================================================
-   ADVANCED MOBILE RESPONSIVE ENGINE (SMARTPHONES & TABLETS)
-   Touch ergonomics, 0-overflow, prominent top horizontal navigation & clean portrait framing
+   ADVANCED MOBILE RESPONSIVE ENGINE (ANDROID & SMARTPHONES)
+   Touch ergonomics, 0-overflow, 4x2 top navigation grid & zero text truncation
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Prevent horizontal page drift */
+  /* Prevent horizontal page drift & text cut-off */
   html, body {
     max-width: 100vw;
     overflow-x: hidden;
+  }
+
+  /* Universal text wrapping protection for Android screens */
+  h1, h2, h3, h4, h5, h6,
+  p, span, a, button,
+  .section-title, .section-desc,
+  .project-title, .project-desc,
+  .timeline-title, .timeline-org, .timeline-body,
+  .award-title, .award-issuer, .award-desc,
+  .metric-label, .star-chip, .spec-val,
+  .modal-title, .modal-tech-stack {
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
 
   body {
@@ -2111,103 +2130,188 @@ button {
   }
 
   .container {
-    padding: 0 16px;
+    padding: 0 14px;
   }
 
   /* Compact Brand for Mobile */
+  .navbar .container {
+    padding: 8px 12px 6px !important;
+    gap: 6px 8px !important;
+  }
+  .nav-brand {
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+  }
   .nav-avatar-img {
     width: 32px;
     height: 32px;
   }
   .nav-title-group .name {
-    font-size: 0.88rem;
+    font-size: 0.84rem !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
   }
   .nav-title-group .badge-title {
-    display: none;
+    display: none !important;
   }
   .nav-actions {
-    gap: 6px;
+    gap: 5px !important;
   }
   .nav-actions .btn-cv-download {
-    display: none; /* Already prominently featured in mobile bottom bar and hero */
+    display: none !important; /* Prominently featured in hero and PDF viewer */
   }
   .btn-recruiter-action {
-    padding: 5px 10px;
-    font-size: 0.74rem;
+    padding: 5px 9px !important;
+    font-size: 0.72rem !important;
+  }
+  .btn-icon {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  /* 8-Item Top Navigation on Android: 4x2 Responsive Grid so 100% of links fit on-screen without any truncation! */
+  .navbar .nav-menu {
+    order: 3 !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 4px 5px !important;
+    width: 100% !important;
+    flex-basis: 100% !important;
+    list-style: none !important;
+    margin: 4px 0 2px !important;
+    padding: 6px 0 2px !important;
+    border-top: 1px solid var(--border-subtle) !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+  }
+  .navbar .nav-menu li {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    width: 100% !important;
+    flex-shrink: 0 !important;
+  }
+  .navbar .nav-menu .nav-link {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 6px 2px !important;
+    font-size: clamp(0.68rem, 2.6vw, 0.74rem) !important;
+    font-weight: 600 !important;
+    line-height: 1.15 !important;
+    border-radius: 6px !important;
+    color: var(--text-muted) !important;
+    background: var(--bg-subtle) !important;
+    border: 1px solid var(--border-subtle) !important;
+    text-decoration: none !important;
+    white-space: normal !important;
+    word-break: normal !important;
+    box-sizing: border-box !important;
+  }
+  .navbar .nav-menu .nav-link:hover,
+  .navbar .nav-menu .nav-link.active {
+    color: var(--accent-cyan) !important;
+    background: rgba(14, 165, 233, 0.14) !important;
+    border-color: rgba(14, 165, 233, 0.45) !important;
+    font-weight: 700 !important;
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.2) !important;
   }
 
   /* Section Spacing */
   .section {
-    padding: 44px 0;
+    padding: 42px 0;
   }
   .section-header {
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
   .section-tag {
     font-size: 0.72rem;
     padding: 4px 10px;
+    white-space: normal;
   }
   .section-title {
-    font-size: 1.65rem;
+    font-size: clamp(1.4rem, 5.5vw, 1.75rem) !important;
     line-height: 1.25;
+    word-break: break-word;
   }
   .section-desc {
     font-size: 0.88rem;
     line-height: 1.55;
+    word-break: break-word;
   }
 
   /* Hero Section Mobile */
   .hero-section {
-    padding: 114px 0 32px;
+    padding: 125px 0 32px !important;
   }
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 26px;
   }
   .hero-badge-status {
-    font-size: 0.68rem;
-    padding: 4px 10px;
+    font-size: 0.70rem !important;
+    padding: 6px 12px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
+    text-align: center !important;
+    justify-content: center !important;
+    border-radius: 20px !important;
+    margin-bottom: 14px !important;
+  }
+  .hero-badge-status span:last-child {
+    white-space: normal !important;
+    word-break: break-word !important;
   }
   .hero-name {
-    font-size: clamp(2.1rem, 7vw, 2.8rem);
-    line-height: 1.15;
-    margin-bottom: 8px;
+    font-size: clamp(1.75rem, 6.2vw, 2.25rem) !important;
+    line-height: 1.2 !important;
+    margin-bottom: 8px !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
   .hero-degree {
-    font-size: 0.88rem;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 14px;
+    font-size: 0.85rem !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    margin-bottom: 14px !important;
+    line-height: 1.4 !important;
+  }
+  .hero-degree span {
+    word-break: break-word !important;
   }
   .hero-degree .gpa-pill {
     font-size: 0.75rem;
     padding: 3px 8px;
+    white-space: nowrap;
   }
   .hero-bio {
     font-size: 0.88rem;
     line-height: 1.6;
     margin-bottom: 18px;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
 
-  /* Hero Technical Tool Chips - Swipeable */
+  /* Hero Technical Tool Chips - Wrapped Cleanly */
   .hero-tools-row {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 6px;
-    margin-bottom: 18px;
-    gap: 6px;
-    scrollbar-width: none;
-  }
-  .hero-tools-row::-webkit-scrollbar {
-    display: none;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    overflow: visible !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 18px !important;
+    gap: 6px !important;
   }
   .tool-chip {
-    flex-shrink: 0;
-    white-space: nowrap;
-    font-size: 0.75rem;
-    padding: 5px 10px;
+    white-space: normal !important;
+    font-size: 0.72rem !important;
+    padding: 5px 9px !important;
+    line-height: 1.3 !important;
   }
 
   /* Vibration Waveform Mobile */
@@ -2216,10 +2320,19 @@ button {
     margin-bottom: 20px;
   }
   .hero-waveform-header {
-    font-size: 0.62rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 3px;
+    font-size: 0.64rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
+  }
+  .hero-waveform-header span {
+    width: 100% !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
   }
 
   /* Hero CTAs - Full Width Touch Ergonomics */
@@ -2239,16 +2352,20 @@ button {
     padding: 13px 18px;
     font-size: 0.9rem;
     min-height: 48px;
+    white-space: normal !important;
+    text-align: center !important;
+    line-height: 1.25 !important;
   }
 
   /* Hero Contact Items */
   .hero-contact-row {
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: stretch !important;
   }
   .hero-contact-item {
-    font-size: 0.82rem;
+    font-size: 0.82rem !important;
+    word-break: break-word !important;
   }
 
   /* Hero Portrait Card & Badges - Clean Face View */
@@ -2294,9 +2411,11 @@ button {
   }
   .floating-badge .badge-title {
     font-size: 0.8rem;
+    word-break: break-word;
   }
   .floating-badge .badge-sub {
     font-size: 0.7rem;
+    word-break: break-word;
   }
   .portrait-card-footer {
     flex-direction: column;
@@ -2324,28 +2443,26 @@ button {
   .metric-label {
     font-size: 0.72rem;
     line-height: 1.35;
+    word-break: break-word;
   }
 
   /* Interactive Lab Mobile */
   .lab-tab-bar {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
-    padding: 4px 2px 10px;
-    gap: 8px;
-    scrollbar-width: none;
-    margin-bottom: 22px;
-  }
-  .lab-tab-bar::-webkit-scrollbar {
-    display: none;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    overflow: visible !important;
   }
   .lab-tab-btn {
-    flex-shrink: 0;
-    white-space: nowrap;
-    padding: 9px 15px;
-    font-size: 0.8rem;
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 11px 14px !important;
+    font-size: 0.82rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
   }
 
   /* Compare Slider Mobile */
@@ -2354,24 +2471,20 @@ button {
     border-radius: var(--radius-md);
   }
   .compare-pills-bar {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
-    padding-bottom: 8px;
-    gap: 6px;
-    scrollbar-width: none;
-    margin-bottom: 14px;
-  }
-  .compare-pills-bar::-webkit-scrollbar {
-    display: none;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    width: 100% !important;
+    margin-bottom: 14px !important;
+    overflow: visible !important;
   }
   .compare-pill-btn {
-    flex-shrink: 0;
-    white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 0.74rem;
+    width: 100% !important;
+    white-space: normal !important;
+    text-align: center !important;
+    padding: 8px 12px !important;
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
   }
   .compare-viewport {
     aspect-ratio: 4 / 3;
@@ -2383,17 +2496,29 @@ button {
     height: 44px;
     font-size: 0.82rem;
   }
-  .compare-badge-left,
-  .compare-badge-right {
-    font-size: 0.62rem;
-    padding: 3px 8px;
-    top: 8px;
-  }
   .compare-badge-left {
-    left: 8px;
+    position: absolute !important;
+    top: 8px !important;
+    left: 8px !important;
+    max-width: 48% !important;
+    font-size: 0.60rem !important;
+    padding: 4px 6px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
   }
   .compare-badge-right {
-    right: 8px;
+    position: absolute !important;
+    top: 8px !important;
+    right: 8px !important;
+    max-width: 48% !important;
+    font-size: 0.60rem !important;
+    padding: 4px 6px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.2 !important;
+    text-align: right !important;
   }
   .compare-caption-bar {
     flex-direction: column;
@@ -2404,6 +2529,7 @@ button {
   .compare-desc-text {
     font-size: 0.84rem;
     line-height: 1.45;
+    word-break: break-word !important;
   }
   .compare-caption-bar .btn-secondary {
     width: 100%;
@@ -2416,34 +2542,44 @@ button {
     touch-action: pan-y;
   }
   .three-controls-overlay {
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    gap: 6px;
+    top: 8px !important;
+    left: 8px !important;
+    right: 8px !important;
+    gap: 6px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
   }
   .three-btn-group {
-    flex-wrap: wrap;
-    gap: 4px;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 4px !important;
+    justify-content: center !important;
   }
   .three-tool-btn {
-    padding: 5px 9px;
-    font-size: 0.68rem;
+    padding: 5px 9px !important;
+    font-size: 0.68rem !important;
+    line-height: 1.2 !important;
   }
   .three-dim-pill {
-    font-size: 0.62rem;
-    padding: 4px 8px;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
+    font-size: 0.64rem !important;
+    padding: 5px 8px !important;
+    width: 100% !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
   }
   .three-info-bar {
-    padding: 12px 14px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    padding: 12px 14px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
   }
   .three-hint {
-    font-size: 0.72rem;
+    font-size: 0.72rem !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
   }
 
   /* Live Calculator Mobile */
@@ -2452,14 +2588,18 @@ button {
     gap: 16px;
   }
   .calc-card {
-    padding: 18px 14px;
+    padding: 18px 14px !important;
   }
   .calc-title {
-    font-size: 1.05rem;
+    font-size: 1.05rem !important;
+    word-break: break-word !important;
   }
   .calc-formula-box {
-    font-size: 0.72rem;
-    padding: 8px 10px;
+    font-size: 0.72rem !important;
+    padding: 8px 10px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
   }
   .calc-slider-range {
     height: 8px;
@@ -2472,33 +2612,34 @@ button {
   }
   .calc-metric-box .label {
     font-size: 0.68rem;
+    word-break: break-word;
   }
   .calc-metric-box .val {
     font-size: 1.1rem;
+    word-break: break-word;
   }
   .calc-safety-badge {
-    font-size: 0.74rem;
-    padding: 8px 10px;
+    font-size: 0.72rem !important;
+    padding: 8px 10px !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
   }
 
   /* Workstation Spotlight Mobile */
   .workstation-tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
-    scrollbar-width: none;
-    padding-bottom: 6px;
-    gap: 6px;
-  }
-  .workstation-tabs::-webkit-scrollbar {
-    display: none;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    overflow: visible !important;
+    gap: 6px !important;
+    padding-bottom: 0 !important;
   }
   .ws-tab-btn {
-    flex-shrink: 0;
-    white-space: nowrap;
-    padding: 7px 12px;
-    font-size: 0.78rem;
+    white-space: normal !important;
+    font-size: 0.76rem !important;
+    padding: 7px 11px !important;
+    line-height: 1.25 !important;
   }
   .ws-preview-frame {
     height: 220px;
@@ -2508,9 +2649,11 @@ button {
   }
   .ws-title {
     font-size: 0.88rem;
+    word-break: break-word;
   }
   .ws-subtitle {
     font-size: 0.72rem;
+    word-break: break-word;
   }
   .ws-spec-grid {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -2535,24 +2678,19 @@ button {
 
   /* Projects Filter Bar Mobile */
   .projects-filter-bar {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
-    padding: 4px 2px 10px;
-    gap: 6px;
-    scrollbar-width: none;
-    margin-bottom: 20px;
-  }
-  .projects-filter-bar::-webkit-scrollbar {
-    display: none;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    overflow: visible !important;
+    gap: 6px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 20px !important;
   }
   .filter-btn {
-    flex-shrink: 0;
-    white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 0.76rem;
+    white-space: normal !important;
+    font-size: 0.76rem !important;
+    padding: 6px 12px !important;
+    line-height: 1.25 !important;
   }
 
   /* Projects Grid */
@@ -2568,9 +2706,12 @@ button {
   }
   .project-title {
     font-size: 1.15rem;
+    word-break: break-word;
   }
   .project-desc {
     font-size: 0.85rem;
+    word-break: break-word;
+    line-height: 1.5;
   }
   .project-specs {
     grid-template-columns: repeat(2, 1fr);
@@ -2581,6 +2722,7 @@ button {
   }
   .spec-val {
     font-size: 0.78rem;
+    word-break: break-word;
   }
 
   /* PDF Document Viewer Mobile */
@@ -2596,7 +2738,10 @@ button {
     gap: 4px;
   }
   .doc-name {
-    font-size: 0.84rem;
+    font-size: 0.84rem !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.35 !important;
   }
   .doc-viewer-controls {
     display: flex;
@@ -2764,14 +2909,36 @@ button {
 }
 
 @media (max-width: 480px) {
+  .navbar .container {
+    padding: 6px 10px 4px !important;
+  }
+  .navbar .nav-menu {
+    gap: 3px 4px !important;
+  }
+  .navbar .nav-menu .nav-link {
+    font-size: 0.68rem !important;
+    padding: 5px 2px !important;
+  }
+  .nav-title-group .name {
+    font-size: 0.82rem !important;
+  }
+  .btn-recruiter-action {
+    padding: 4px 8px !important;
+    font-size: 0.70rem !important;
+  }
+  .hero-section {
+    padding: 120px 0 28px !important;
+  }
   .portrait-image-wrapper {
-    height: 350px;
+    height: 340px;
   }
   .hero-name {
-    font-size: 2rem;
+    font-size: clamp(1.65rem, 5.8vw, 1.95rem) !important;
+    line-height: 1.2 !important;
   }
   .section-title {
-    font-size: 1.5rem;
+    font-size: 1.45rem !important;
+    line-height: 1.25 !important;
   }
   .compare-viewport {
     aspect-ratio: 4 / 3;
